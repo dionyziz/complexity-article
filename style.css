@@ -1,0 +1,147 @@
+body {
+    font-family: 'Droid Sans', 'Trebuchet MS', Verdana, Helvetica, sans-serif;
+    background-color: #eee;
+    margin: 0;
+    line-height: 15pt;
+}
+.content {
+    margin: 20px 20px 5px 20px;
+}
+h1, h2, h3 {
+    text-shadow: 1px 1px 0px white;
+}
+h2 {
+    font-size: 110%;
+}
+h3 {
+    font-size: 100%;
+}
+a {
+    color: #0077d8;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    background-color: #0077d8;
+}
+.figure {
+    display: table;
+}
+table {
+    border-collapse: collapse;
+}
+td, th {
+    padding: 5px;
+}
+a img {
+    border: 0;
+}
+.sidefigure, .figure {
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #c7c5be;
+    border-radius: 5px;
+}
+.sidefigure {
+    float: left;
+    width: 500px;
+    margin: 0 10px 10px 0;
+}
+.sidefigure.right {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+.sidefigure img {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+}
+.sidefigure label {
+    display: block;
+    padding: 5px 0;
+    text-align: center;
+}
+.sidefigure label img {
+    display: inline;
+    margin: 0;
+}
+.leftofimage {
+    margin-right: 520px;
+}
+p.thumb {
+    background-image: url( 'images/thumb-up.png' );
+    background-repeat: no-repeat;
+    background-position: 10px 6px;
+    padding: 5px 35px;
+    background-color: white;
+    margin: 5px 0;
+}
+div.highlight {
+    background-color: #99b9e0;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    padding: 3px 0;
+    margin: 5px 0;
+}
+.bottom {
+    font-family: 'Trebuchet MS', Verdana, sans-serif;
+    background-color: #111;
+    color: white;
+    padding: 12px 10px;
+    position: relative;
+}
+.bottom a {
+    color: white;
+}
+.bottom .license {
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+}
+.bottom .license img {
+    position: relative;
+    top: 3px;
+}
+.bottom .twitter-share-button {
+    float: right;
+    left: 3px;
+    padding-right: 13px;
+    position: relative;
+    top: -3px;
+    margin-left: -40px;
+}
+.bottom a:hover {
+    color: white;
+    text-decoration: underline;
+    background-color: transparent;
+}
+div.love {
+    position: relative;
+    top: -4px;
+    font-size: 80%;
+    width: 50%;
+    padding-left: 9px;
+}
+div.love::before {
+    font-family: 'Trebuchet MS', Verdana;
+    content: '♥';
+    color: red;
+    padding-right: 9px;
+    font-size: 150%;
+    position: relative;
+    top: 2px;
+}
+var {
+    font-style: normal;
+}
+em {
+    background-color: white;
+    font-style: normal;
+    padding: 2px;
+}
+div.exercise {
+    border-bottom: 1px solid #c7c5be;
+}
