@@ -148,3 +148,11 @@ div.exercise {
 ol.hide-nums {
     list-style: none;
 }
+iframe.FlattrButton {
+    float: right;
+    padding-right: 42px;
+    margin-top: 2px;
+}
+iframe.FlattrButton .content {
+    box-shadow: none;
+}

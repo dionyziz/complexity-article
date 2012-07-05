@@ -11,17 +11,27 @@
         <link href='syntax/css/shCore.css' rel='stylesheet' />
         <link href='syntax/css/shThemeDefault.css' rel='stylesheet' />
         <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-33157490-1']);
+            _gaq.push(['_trackPageview']);
 
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-33157490-1']);
-          _gaq.push(['_trackPageview']);
+            ( function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            } )();
+        </script>
+        <script type="text/javascript">
+            ( function() {
+                var s = document.createElement( 'script' );
+                var t = document.getElementsByTagName( 'script' )[ 0 ];
 
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = '//api.flattr.com/js/0.6/load.js?mode=auto';
 
+                t.parentNode.insertBefore(s, t);
+             } )();
         </script>
     </head>
     <body><div class='content'>
@@ -241,7 +251,7 @@
         <p>As here we have two nested loops within each other, we'll have an asymptotic behavior described by f( n ) = n<sup>2</sup>.</p>
 
         <div class='highlight'>
-            <p class='thumb'><strong>Rule of thumb</strong>: Simple programs can be analyzed by counting the nested loops of the program. A single loop yields f( n ) = n. A loop within a loop yields f( n ) = n<sup>2</sup>. A loop within a loop within a loop yields f( n ) = n<sup>3</sup>.</p>
+            <p class='thumb'><strong>Rule of thumb</strong>: Simple programs can be analyzed by counting the nested loops of the program. A single loop over n items yields f( n ) = n. A loop within a loop yields f( n ) = n<sup>2</sup>. A loop within a loop within a loop yields f( n ) = n<sup>3</sup>.</p>
         </div>
 
         <p>If we have a program that calls a function within a loop and we know the number of instructions the called function performs, it's easy to determine the number of instructions of the whole program. Indeed, let's take a look at this C example:</p>
@@ -713,6 +723,15 @@
     </div>
     <div class='bottom'>
         <a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="large" data-count="none" data-via='dionyziz'>Tweet</a>
+        <a class="FlattrButton" style="display:none;float:right"
+            title="A Gentle Introdution to Algorithm Complexity Analysis"
+            data-flattr-uid="dionyziz"
+            data-flattr-tags="algorithms, complexity, computer science"
+            data-flattr-category="text"
+            data-flattr-button="compact"
+            href="http://discrete.gr/complexity">
+            A Gentle Introdution to Algorithm Complexity Analysis
+        </a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <a class='license' href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons 3.0'><img src='http://i.creativecommons.org/l/by/3.0/80x15.png' alt='Creative Commons 3.0' /></a>
         <div class='love'>Lovingly made in Athens city by <a href='http://twitter.com/dionyziz'>dionyziz</a>.</div>
