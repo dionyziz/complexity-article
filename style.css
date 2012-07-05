@@ -138,10 +138,13 @@ var {
     font-style: normal;
 }
 em {
-    background-color: white;
+    background-color: #ccc;
     font-style: normal;
     padding: 2px;
 }
 div.exercise {
     border-bottom: 1px solid #c7c5be;
+}
+ol.hide-nums {
+    list-style: none;
 }
