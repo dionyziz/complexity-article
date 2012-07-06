@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule ^.*el$ /index-el.html [L,QSA]

@@ -269,7 +269,7 @@
             <p class='thumb'><strong>Rule of thumb</strong>: Given a series of for loops that are sequential, the slowest of them determines the asymptotic behavior of the program. Two nested loops followed by a single loop is asymptotically the same as the nested loops alone, because the nested loops <em>dominate</em> the simple loop.</p>
         </div>
 
-        <p>Now, let's switch over to the fancy notation that computer scientists use. When we've figured out the exact such f ignoring constants asymptotically, we'll say that our program is Θ( f( n ) ). For example, the above programs are Θ( 1 ), Θ( n<sup>2</sup> ) and Θ( n<sup>2</sup> ) respectively. Θ( n ) is pronounced "theta of n". Sometimes we say that f( n ), the original function counting the instructions including the constants, is Θ( something ). For example, we may say that f( n ) = 2n is a function that is Θ( n ) — nothing new here. We can also write 2n ∈ Θ( n ), which is pronounced as "two n is theta of n". Don't get confused about this notation: All it's saying is that if we've counted the number of instructions a program needs and those are 2n, then the asymptotic behavior of our algorithm is described by n, which we found by dropping the constants. Given this notation, the following are some true mathematical statements:</p>
+        <p>Now, let's switch over to the fancy notation that computer scientists use. When we've figured out the exact such f asymptotically, we'll say that our program is Θ( f( n ) ). For example, the above programs are Θ( 1 ), Θ( n<sup>2</sup> ) and Θ( n<sup>2</sup> ) respectively. Θ( n ) is pronounced "theta of n". Sometimes we say that f( n ), the original function counting the instructions including the constants, is Θ( something ). For example, we may say that f( n ) = 2n is a function that is Θ( n ) — nothing new here. We can also write 2n ∈ Θ( n ), which is pronounced as "two n is theta of n". Don't get confused about this notation: All it's saying is that if we've counted the number of instructions a program needs and those are 2n, then the asymptotic behavior of our algorithm is described by n, which we found by dropping the constants. Given this notation, the following are some true mathematical statements:</p>
         <ol>
             <li>n<sup>6</sup> + 3n ∈ Θ( n<sup>6</sup> )</li>
             <li>2<sup>n</sup> + 12 ∈ Θ( 2<sup>n</sup> )</li>
@@ -467,7 +467,7 @@
         </div>
 
         <div class='right sidefigure'>
-            <img src='images/log-vs-linear.png' alt='The log function is much lower than the square root function, which, in turn, is much lower than the linear function even or small n' />
+            <img src='images/log-vs-linear.png' alt='The log function is much lower than the square root function, which, in turn, is much lower than the linear function even for small n' />
             <label><strong>Figure 4</strong>: A comparison of the functions n, <img alt='sqrt( n )' src='images/sqrtn.png' />, and log( n ). Function n, the linear function, drawn in green at the top, grows much faster than the square root function, drawn in red in the middle, which, in turn, grows much faster than the log( n ) function drawn in blue at the bottom of this plot. Even for small n such as n = 100, the difference is quite pronounced.</label>
         </div>
 
@@ -501,9 +501,9 @@
                 <li>By trial and error we can find that x = 6 and so log( 64 ) = 6.</li>
                 <li>Here we notice that (2<sup>2</sup>)<sup>x</sup>, by the properties of exponents, can be written as 2<sup>2x</sup>. So we have that 2x = 6 because log( 64 ) = 6 from the previous result and therefore x = 3.</li>
                 <li>Using our knowledge from the previous equation, we can write 4 as 2<sup>2</sup> and so our equation becomes (2<sup>2</sup>)<sup>x</sup> = 4 which is the same as 2<sup>2x</sup> = 4. Then we notice that log( 4 ) = 2 because 2<sup>2</sup> = 4 and therefore we have that 2x = 2. So x = 1. This is readily observed from the original equation, as using an exponent of 1 yields the base as a result.</li>
-                <li>Recall that an exponent of 0 yields a result of 1. So log( 1 ) = 0 as 2<sup>0</sup> = 1.</li>
+                <li>Recall that an exponent of 0 yields a result of 1. So log( 1 ) = 0 is 2<sup>0</sup> = 1.</li>
                 <li>Here we have a sum and so we can't take the logarithm directly. However we notice that 2<sup>x</sup> + 2<sup>x</sup> is the same as 2 * (2<sup>x</sup>). So we've multiplied in yet another two, and therefore this is the same as 2<sup>x + 1</sup> and now all we have to do is solve the equation 2<sup>x + 1</sup> = 32. We find that log( 32 ) = 5 and so x + 1 = 5 and therefore x = 4.</li>
-                <li>We're multiplying together two powers of 2, and so we can join them by noticing that (2<sup>x</sup>) * (2<sup>x</sup>) is the same as 2<sup>2x</sup>. Then all we need to do is to solve the equation 2<sup>2x</sup> = 64 which we already solved above and so x = 3.
+                <li>We're multiplying together two powers of 2, and so we can join them by noticing that (2<sup>x</sup>) * (2<sup>x</sup>) is the same as 2<sup>2x</sup>. Then all we need to do is to solve the equation 2<sup>2x</sup> = 64 which we already solved above and so x = 3.</li>
             </ol>
         </div>
 
@@ -544,69 +544,7 @@
 
         <h2 id='logcomplexity'>Logarithmic complexity</h2>
 
-        <p>One famous problem in computer science is that of searching for a value within an array. We solved this problem earlier for the general case. This problem becomes interesting if we have an array which is sorted and we want to find a given value within it. One method to do that is called <em>binary search</em>. We look at the middle element of our array: If we find it there, we're done. Otherwise, if the value we find there is bigger than the value we're looking for, we know that our element will be on the left part of the array. Otherwise, we know it'll be on the right part of the array. We can keep cutting these smaller arrays in halves until we have a single element to look at. Here's the method using pseudocode:</p>
-
-        <div class='leftofimage'>
-            <pre class='brush: python; gutter: false; toolbar: false;'>
-                def binarySearch( A, n, value ):
-                    if n = 1:
-                        if A[ 0 ] = value:
-                            return true
-                        else:
-                            return false
-                    if value &lt; A[ n / 2 ]:
-                        return binarySearch( A[ 0...( n / 2 - 1 ) ], n / 2 - 1, value )
-                    else if value &gt; A[ n / 2 ]:
-                        return binarySearch( ( A[ n / 2 + 1 )...n ], n / 2 - 1, value )
-                    else:
-                        return true
-            </pre>
-        </div>
-
-        <p>This pseudocode is a simplification of the actual implementation. In practice, this method is easier described than implemented, as the programmer needs to take care of some implementation issues. There are off-by-one errors and the division by 2 may not always produce an integer value and so it's necessary to floor() or ceil() the value. But we can assume for our purposes that it will always succeed, and we'll assume our actual implementation in fact takes care of the off-by-one errors, as we only want to analyze the complexity of this method. If you've never implemented binary search before, you may want to do this in your favourite programming language. It's a truly enlightening endeavor.</p>
-
-        <p>See <strong>Figure 6</strong> to help you understand the way binary search operates.</p>
-
-        <p>If you're unsure that this method actually works, take a moment now to run it by hand in a simple example and convince yourself that it actually works.</li>
-
-        <p>Let us now attempt to analyze this algorithm. Again, we have a recursive algorithm in this case. Let's assume, for simplicity, that the array is always cut in exactly a half, ignoring just now the + 1 and - 1 part in the recursive call. By now you should be convinced that a little change such as ignoring + 1 and - 1 won't affect our complexity results. This is a fact that we would normally have to prove if we wanted to be prudent from a mathematical point of view, but practically it is intuitively obvious. Let's assume that our array has a size that is an exact power of 2, for simplicity. Again this assumption doesn't change the final results of our complexity that we will arrive at. The worst-case scenario for this problem would happen when the value we're looking for does not occur in our array at all. In that case, we'd start with an array of size n in the first call of the recursion, then get an array of size n / 2 in the next call. Then we'll get an array of size n / 4 in the next recursive call, followed by an array of size n / 8 and so forth. In general, our array is split in half in every call, until we reach 1. So, let's write the number of elements in our array for every call:</p>
-        <ol class='hide-nums'>
-            <li>1<sup>st</sup> iteration: n</li>
-            <li>2<sup>nd</sup> iteration: n / 2</li>
-            <li>3<sup>rd</sup> iteration: n / 4</li>
-            <li>4<sup>th</sup> iteration: n / 8</li>
-            <li>...</li>
-            <li>i<sup>th</sup> iteration: n / 2<sup>i</sup></li>
-            <li>...</li>
-            <li>last iteration: 1</li>
-        </ol>
-
-        <p>Notice that in the i-th iteration, our array has n / 2<sup>i</sup> elements. This is because in every iteration we're cutting our array into half, meaning we're dividing its number of elements by two. This translates to multiplying the denominator with a 2. If we do that i times, we get n / 2<sup>i</sup>. Now, this procedure continues and with every larger i we get a smaller number of elements until we reach the last iteration in which we have only 1 element left. If we wish to find i to see in what iteration this will take place, we have to solve the following equation:</p>
-
-        <p>1 = n / 2<sup>i</sup></p>
-
-        <p>This will only be true when we have reached the final call to the binarySearch() function, not in the general case. So solving for i here will help us find in which iteration the recursion will finish. Multiplying both sides by 2<sup>i</sup> we get:</p>
-
-        <p>2<sup>i</sup> = n</p>
-
-        <p>Now, this equation should look familiar if you read the logarithms section above. Solving for i we have:</p>
-
-        <p>i = log( n )</p>
-
-        <p>This tells us that the number of iterations required to perform a binary search is log( n ) where n is the number of elements in the original array.</p>
-
-        <p>If you think about it, this makes some sense. For example, take n = 32, an array of 32 elements. How many times do we have to cut this in half to get only 1 element? We get: 32 → 16 → 8 → 4 → 2 → 1. We did this 5 times, which is the logarithm of 32. Therefore, the complexity of binary search is Θ( log( n ) ).</p>
-
-        <p>This last result allows us to compare binary search with linear search, our previous method. Clearly, as log( n ) is much smaller than n, it is reasonable to conclude that binary search is a much faster method to search within an array then linear search, so it may be advisable to keep our arrays sorted if we want to do many searches within them.</p>
-
-        <div class='highlight'>
-            <p class='thumb'><strong>Rule of thumb</strong>: Improving the asymptotic running time of a program often tremendously increases its performance, much more than any smaller "technical" optimizations such as using a faster programming language.</p>
-        </div>
-
-        <h2 id='sort'>Optimal sorting</h2>
-
-        <p><strong>Congratulations.</strong> You now know about analyzing the complexity of algorithms, asymptotic behavior of functions and big-O notation. You also know how to intuitively figure out that the complexity of an algorithm is O( 1 ), O( log( n ) ), O( n ), O( n<sup>2</sup> ) and so forth. You know the symbols o, O, ω, Ω and Θ and what worst-case analysis means. If you've come this far, this tutorial has already served its purpose.</p>
-
+        <p>One famous problem in computer science is that of searching for a value within an array. We solved this problem earlier for the general case. This problem becomes interesting if we have an array which is sorted and we want to find a given value within it. One method to do that is called <em>binary search</em>. We look at the middle element of our array: If we find it there, we're done. Otherwise, if the value we find there is bigger than the value we're looking for, we know that our element will be on the left part of the array. Otherwise, we know it'll be on the right pa<
         <p>This final section is optional. It is a little more involved, so feel free to skip it if you feel overwhelmed by it. It will require you to focus and spend some moments working through the exercises. However, it will provide you with a very useful method in algorithm complexity analysis which can be very powerful, so it's certainly worth understanding.</p>
 
         <p>We looked at a sorting implementation above called a selection sort. We mentioned that selection sort is not optimal. An <em>optimal algorithm</em> is an algorithm that solves a problem in the best possible way, meaning there are no better algorithms for this. This means that all other algorithms for solving the problem have a worse or equal complexity to that optimal algorithm. There may be many optimal algorithms for a problem that all share the same complexity. The sorting problem can be solved optimally in various ways. We can use the same idea as with binary search to sort quickly. This sorting method is called <em>mergesort</em>.</p>
@@ -674,7 +612,7 @@
          
         <p>Let's see what's going on here. Each circle represents a call to the <code>mergeSort</code> function. The number written in the circle indicates the size of the array that is being sorted. The top blue circle is the original call to <code>mergeSort</code>, where we get to sort an array of size <var>n</var>. The arrows indicate recursive calls made between functions. The original call to <code>mergeSort</code> makes two calls to <code>mergeSort</code> on two arrays, each of size n / 2. This is indicated by the two arrows at the top. In turn, each of these calls makes two calls of its own to <code>mergeSort</code> two arrays of size n / 4 each, and so forth until we arrive at arrays of size 1. This diagram is called a <em>recursion tree</em>, because it illustrates how the recursion behaves and looks like a tree (the <em>root</em> is at the top and the <em>leaves</em> are at the bottom, so in reality it looks like an inversed tree).</p>
 
-        <p>Notice that at each row in the above diagram, the total number of elements is n. To see this, take a look at each row individually. The first row contains only one call to <code>mergeSort</code> with an element of size <var>n</var>, so the total number of elements is <var>n</var>. The second row has two calls to <code>mergeSort</code> each of size n / 2. But n / 2 + n / 2 = n and so again in this row the total number of elements is <var>n</var>. In the third row, we have 4 calls each of which is applied on an n / 4-sized array, yielding a total number of elements equal to n / 4 + n / 4 + n / 4 + n / 4 = 4n / 4 = n. So again we get <var>n</var> elements. Now notice that at each row in this diagram the caller will have to perform a <code>merge</code> operation on the elements returned by the callees. For example, the circle indicated with red color has to sort n / 2 elements. To do this, it splits the n / 2-sized array into two n / 4-sized arrays, calls <code>mergeSort</code> recursively to sort those (these calls are the circles indicated with green color), then merges them together. This merge operation requires to merge n / 2 elements. At each row in our tree, the total number of elements merged is n. In the row that we just explored, our function merges n / 2 elements and the function on its right (which is in blue color) also has to merge n / 2 elements of its own. That yields n elements in total that need to be merged for the row we're looking at.</p>
+        <p>Notice that at each row in the above diagram, the total number of elements is n. To see this, take a look at each row individually. The first row contains only one call to <code>mergeSort</code> with an array of size <var>n</var>, so the total number of elements is <var>n</var>. The second row has two calls to <code>mergeSort</code> each of size n / 2. But n / 2 + n / 2 = n and so again in this row the total number of elements is <var>n</var>. In the third row, we have 4 calls each of which is applied on an n / 4-sized array, yielding a total number of elements equal to n / 4 + n / 4 + n / 4 + n / 4 = 4n / 4 = n. So again we get <var>n</var> elements. Now notice that at each row in this diagram the caller will have to perform a <code>merge</code> operation on the elements returned by the callees. For example, the circle indicated with red color has to sort n / 2 elements. To do this, it splits the n / 2-sized array into two n / 4-sized arrays, calls <code>mergeSort</code> recursively to sort those (these calls are the circles indicated with green color), then merges them together. This merge operation requires to merge n / 2 elements. At each row in our tree, the total number of elements merged is n. In the row that we just explored, our function merges n / 2 elements and the function on its right (which is in blue color) also has to merge n / 2 elements of its own. That yields n elements in total that need to be merged for the row we're looking at.</p>
 
         <p>By this argument, the complexity for each row is Θ( n ). We know that the number of rows in this diagram, also called the <em>depth</em> of the recursion tree, will be log( n ). The reasoning for this is exactly the same as the one we used when analyzing the complexity of binary search. We have log( n ) rows and each of them is Θ( n ), therefore the complexity of <code>mergeSort</code> is Θ( n * log( n ) ). This is much better than Θ( n<sup>2</sup> ) which is what selection sort gave us (remember that log( n ) is much smaller than n, and so n * log( n ) is much smaller than n * n = n<sup>2</sup>). If this sounds complicated to you, don't worry: It's not easy the first time you see it. Revisit this section and reread about the arguments here after you implement mergesort in your favourite programming language and validate that it works.</p>
 
@@ -701,6 +639,7 @@
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'discretegr'; // required: replace example with your forum shortname
+            var disqus_identifier = '/complexity/';
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
