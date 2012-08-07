@@ -544,7 +544,69 @@
 
         <h2 id='logcomplexity'>Logarithmic complexity</h2>
 
-        <p>One famous problem in computer science is that of searching for a value within an array. We solved this problem earlier for the general case. This problem becomes interesting if we have an array which is sorted and we want to find a given value within it. One method to do that is called <em>binary search</em>. We look at the middle element of our array: If we find it there, we're done. Otherwise, if the value we find there is bigger than the value we're looking for, we know that our element will be on the left part of the array. Otherwise, we know it'll be on the right pa<
+        <p>One famous problem in computer science is that of searching for a value within an array. We solved this problem earlier for the general case. This problem becomes interesting if we have an array which is sorted and we want to find a given value within it. One method to do that is called <em>binary search</em>. We look at the middle element of our array: If we find it there, we're done. Otherwise, if the value we find there is bigger than the value we're looking for, we know that our element will be on the left part of the array. Otherwise, we know it'll be on the right part of the array. We can keep cutting these smaller arrays in halves until we have a single element to look at. Here's the method using pseudocode:</p>
+
+        <div class='leftofimage'>
+            <pre class='brush: python; gutter: false; toolbar: false;'>
+                def binarySearch( A, n, value ):
+                    if n = 1:
+                        if A[ 0 ] = value:
+                            return true
+                        else:
+                            return false
+                    if value &lt; A[ n / 2 ]:
+                        return binarySearch( A[ 0...( n / 2 - 1 ) ], n / 2 - 1, value )
+                    else if value &gt; A[ n / 2 ]:
+                        return binarySearch( ( A[ n / 2 + 1 )...n ], n / 2 - 1, value )
+                    else:
+                        return true
+            </pre>
+        </div>
+
+        <p>This pseudocode is a simplification of the actual implementation. In practice, this method is easier described than implemented, as the programmer needs to take care of some implementation issues. There are off-by-one errors and the division by 2 may not always produce an integer value and so it's necessary to floor() or ceil() the value. But we can assume for our purposes that it will always succeed, and we'll assume our actual implementation in fact takes care of the off-by-one errors, as we only want to analyze the complexity of this method. If you've never implemented binary search before, you may want to do this in your favourite programming language. It's a truly enlightening endeavor.</p>
+
+        <p>See <strong>Figure 6</strong> to help you understand the way binary search operates.</p>
+
+        <p>If you're unsure that this method actually works, take a moment now to run it by hand in a simple example and convince yourself that it actually works.</li>
+
+        <p>Let us now attempt to analyze this algorithm. Again, we have a recursive algorithm in this case. Let's assume, for simplicity, that the array is always cut in exactly a half, ignoring just now the + 1 and - 1 part in the recursive call. By now you should be convinced that a little change such as ignoring + 1 and - 1 won't affect our complexity results. This is a fact that we would normally have to prove if we wanted to be prudent from a mathematical point of view, but practically it is intuitively obvious. Let's assume that our array has a size that is an exact power of 2, for simplicity. Again this assumption doesn't change the final results of our complexity that we will arrive at. The worst-case scenario for this problem would happen when the value we're looking for does not occur in our array at all. In that case, we'd start with an array of size n in the first call of the recursion, then get an array of size n / 2 in the next call. Then we'll get an array of size n / 4 in the next recursive call, followed by an array of size n / 8 and so forth. In general, our array is split in half in every call, until we reach 1. So, let's write the number of elements in our array for every call:</p>
+        <ol class='hide-nums'>
+            <li>1<sup>st</sup> iteration: n</li>
+            <li>2<sup>nd</sup> iteration: n / 2</li>
+            <li>3<sup>rd</sup> iteration: n / 4</li>
+            <li>4<sup>th</sup> iteration: n / 8</li>
+            <li>...</li>
+            <li>i<sup>th</sup> iteration: n / 2<sup>i</sup></li>
+            <li>...</li>
+            <li>last iteration: 1</li>
+        </ol>
+
+        <p>Notice that in the i-th iteration, our array has n / 2<sup>i</sup> elements. This is because in every iteration we're cutting our array into half, meaning we're dividing its number of elements by two. This translates to multiplying the denominator with a 2. If we do that i times, we get n / 2<sup>i</sup>. Now, this procedure continues and with every larger i we get a smaller number of elements until we reach the last iteration in which we have only 1 element left. If we wish to find i to see in what iteration this will take place, we have to solve the following equation:</p>
+
+        <p>1 = n / 2<sup>i</sup></p>
+
+        <p>This will only be true when we have reached the final call to the binarySearch() function, not in the general case. So solving for i here will help us find in which iteration the recursion will finish. Multiplying both sides by 2<sup>i</sup> we get:</p>
+
+        <p>2<sup>i</sup> = n</p>
+
+        <p>Now, this equation should look familiar if you read the logarithms section above. Solving for i we have:</p>
+
+        <p>i = log( n )</p>
+
+        <p>This tells us that the number of iterations required to perform a binary search is log( n ) where n is the number of elements in the original array.</p>
+
+        <p>If you think about it, this makes some sense. For example, take n = 32, an array of 32 elements. How many times do we have to cut this in half to get only 1 element? We get: 32 → 16 → 8 → 4 → 2 → 1. We did this 5 times, which is the logarithm of 32. Therefore, the complexity of binary search is Θ( log( n ) ).</p>
+
+        <p>This last result allows us to compare binary search with linear search, our previous method. Clearly, as log( n ) is much smaller than n, it is reasonable to conclude that binary search is a much faster method to search within an array then linear search, so it may be advisable to keep our arrays sorted if we want to do many searches within them.</p>
+
+        <div class='highlight'>
+            <p class='thumb'><strong>Rule of thumb</strong>: Improving the asymptotic running time of a program often tremendously increases its performance, much more than any smaller "technical" optimizations such as using a faster programming language.</p>
+        </div>
+
+        <h2 id='sort'>Optimal sorting</h2>
+
+        <p><strong>Congratulations.</strong> You now know about analyzing the complexity of algorithms, asymptotic behavior of functions and big-O notation. You also know how to intuitively figure out that the complexity of an algorithm is O( 1 ), O( log( n ) ), O( n ), O( n<sup>2</sup> ) and so forth. You know the symbols o, O, ω, Ω and Θ and what worst-case analysis means. If you've come this far, this tutorial has already served its purpose.</p>
+
         <p>This final section is optional. It is a little more involved, so feel free to skip it if you feel overwhelmed by it. It will require you to focus and spend some moments working through the exercises. However, it will provide you with a very useful method in algorithm complexity analysis which can be very powerful, so it's certainly worth understanding.</p>
 
         <p>We looked at a sorting implementation above called a selection sort. We mentioned that selection sort is not optimal. An <em>optimal algorithm</em> is an algorithm that solves a problem in the best possible way, meaning there are no better algorithms for this. This means that all other algorithms for solving the problem have a worse or equal complexity to that optimal algorithm. There may be many optimal algorithms for a problem that all share the same complexity. The sorting problem can be solved optimally in various ways. We can use the same idea as with binary search to sort quickly. This sorting method is called <em>mergesort</em>.</p>
