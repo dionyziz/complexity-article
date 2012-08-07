@@ -571,10 +571,10 @@
 
         <p>Let us now attempt to analyze this algorithm. Again, we have a recursive algorithm in this case. Let's assume, for simplicity, that the array is always cut in exactly a half, ignoring just now the + 1 and - 1 part in the recursive call. By now you should be convinced that a little change such as ignoring + 1 and - 1 won't affect our complexity results. This is a fact that we would normally have to prove if we wanted to be prudent from a mathematical point of view, but practically it is intuitively obvious. Let's assume that our array has a size that is an exact power of 2, for simplicity. Again this assumption doesn't change the final results of our complexity that we will arrive at. The worst-case scenario for this problem would happen when the value we're looking for does not occur in our array at all. In that case, we'd start with an array of size n in the first call of the recursion, then get an array of size n / 2 in the next call. Then we'll get an array of size n / 4 in the next recursive call, followed by an array of size n / 8 and so forth. In general, our array is split in half in every call, until we reach 1. So, let's write the number of elements in our array for every call:</p>
         <ol class='hide-nums'>
-            <li>1<sup>st</sup> iteration: n</li>
-            <li>2<sup>nd</sup> iteration: n / 2</li>
-            <li>3<sup>rd</sup> iteration: n / 4</li>
-            <li>4<sup>th</sup> iteration: n / 8</li>
+            <li>0<sup>th</sup> iteration: n</li>
+            <li>1<sup>st</sup> iteration: n / 2</li>
+            <li>2<sup>nd</sup> iteration: n / 4</li>
+            <li>3<sup>rd</sup> iteration: n / 8</li>
             <li>...</li>
             <li>i<sup>th</sup> iteration: n / 2<sup>i</sup></li>
             <li>...</li>
