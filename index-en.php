@@ -1,45 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8' />
-        <title>
-            A Gentle Introduction to Algorithm Complexity Analysis
-        </title>
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-        <link href='style.css' rel='stylesheet' />
-        <link rel='icon' type='image/png' href='images/smiley-cool.png' />
-        <link href='syntax/css/shCore.css' rel='stylesheet' />
-        <link href='syntax/css/shThemeDefault.css' rel='stylesheet' />
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-33157490-1']);
-            _gaq.push(['_trackPageview']);
-
-            ( function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            } )();
-        </script>
-        <script type="text/javascript">
-            ( function() {
-                var s = document.createElement( 'script' );
-                var t = document.getElementsByTagName( 'script' )[ 0 ];
-
-                s.type = 'text/javascript';
-                s.async = true;
-                s.src = '//api.flattr.com/js/0.6/load.js?mode=auto';
-
-                t.parentNode.insertBefore(s, t);
-             } )();
-        </script>
-    </head>
-    <body><div class='content'>
-        <!--
-        This article has been typeset in HTML/CSS by hand.
-
-        Interested in translating? E-mail me.
-        -->
+<?php
+    ob_start();
+?>
         <h1 id='gentle'>A Gentle Introduction to Algorithm Complexity Analysis</h1>
         Dionysis "dionyziz" Zindros &lt;<a href='mailto:dionyziz@gmail.com'>dionyziz@gmail.com</a>&gt;
 
@@ -421,7 +382,7 @@
             </ol>
         </div>
 
-        <p>The reason we use O and Ω instead of Θ even though O and Ω can also give tight bounds is that we may not be able to tell if a bound we've found is tight, or we may just not want to go through the process of scrutinizing it so much.</li>
+        <p>The reason we use O and Ω instead of Θ even though O and Ω can also give tight bounds is that we may not be able to tell if a bound we've found is tight, or we may just not want to go through the process of scrutinizing it so much.</p>
 
         <p>If you don't fully remember all the different symbols and their uses, don't worry about it too much right now. You can always come back and look them up. The most important symbols are O and Θ.</p>
 
@@ -567,7 +528,7 @@
 
         <p>See <strong>Figure 6</strong> to help you understand the way binary search operates.</p>
 
-        <p>If you're unsure that this method actually works, take a moment now to run it by hand in a simple example and convince yourself that it actually works.</li>
+        <p>If you're unsure that this method actually works, take a moment now to run it by hand in a simple example and convince yourself that it actually works.</p>
 
         <p>Let us now attempt to analyze this algorithm. Again, we have a recursive algorithm in this case. Let's assume, for simplicity, that the array is always cut in exactly a half, ignoring just now the + 1 and - 1 part in the recursive call. By now you should be convinced that a little change such as ignoring + 1 and - 1 won't affect our complexity results. This is a fact that we would normally have to prove if we wanted to be prudent from a mathematical point of view, but practically it is intuitively obvious. Let's assume that our array has a size that is an exact power of 2, for simplicity. Again this assumption doesn't change the final results of our complexity that we will arrive at. The worst-case scenario for this problem would happen when the value we're looking for does not occur in our array at all. In that case, we'd start with an array of size n in the first call of the recursion, then get an array of size n / 2 in the next call. Then we'll get an array of size n / 4 in the next recursive call, followed by an array of size n / 8 and so forth. In general, our array is split in half in every call, until we reach 1. So, let's write the number of elements in our array for every call:</p>
         <ol class='hide-nums'>
@@ -691,51 +652,16 @@
 
         <h2 id='references'>References</h2>
         <ol>
-            <li>Cormen, Leiserson, Rivest, Stein. <a href='http://www.amazon.co.uk/Introduction-Algorithms-T-Cormen/dp/0262533057/ref=sr_1_1?ie=UTF8&qid=1341414466&sr=8-1'>Introduction to Algorithms</a>, MIT Press.</li>
-            <li>Dasgupta, Papadimitriou, Vazirani. <a href='http://www.amazon.co.uk/Algorithms-Sanjoy-Dasgupta/dp/0073523402/ref=sr_1_1?s=books&ie=UTF8&qid=1341414505&sr=1-1'>Algorithms</a>, McGraw-Hill Press.</li>
+            <li>Cormen, Leiserson, Rivest, Stein. <a href='http://www.amazon.co.uk/Introduction-Algorithms-T-Cormen/dp/0262533057/ref=sr_1_1?ie=UTF8&amp;qid=1341414466&amp;sr=8-1'>Introduction to Algorithms</a>, MIT Press.</li>
+            <li>Dasgupta, Papadimitriou, Vazirani. <a href='http://www.amazon.co.uk/Algorithms-Sanjoy-Dasgupta/dp/0073523402/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1341414505&amp;sr=1-1'>Algorithms</a>, McGraw-Hill Press.</li>
             <li>Fotakis. Course of <a href='http://discrete.gr/'>Discrete Mathematics</a> at the National Technical University of Athens.</li>
             <li>Fotakis. Course of <a href='http://www.corelab.ece.ntua.gr/courses/algorithms/'>Algorithms and Complexity</a> at the National Technical University of Athens.</li>
         </ol>
 
        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'discretegr'; // required: replace example with your forum shortname
-            var disqus_identifier = '/complexity/';
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        
-        <script src="syntax/js/shCore.js"></script>
-        <script src="syntax/js/shBrushCpp.js"></script>
-        <script src="syntax/js/shBrushJScript.js"></script>
-        <script src="syntax/js/shBrushPython.js"></script>
-        <script src="syntax/js/shBrushRuby.js"></script>
-        <script src="syntax/js/shBrushDelphi.js"></script>
-        <script src="syntax/js/shBrushPhp.js"></script>
-        <script>
-            SyntaxHighlighter.all( 'code' );
-        </script>
-    </div>
-    <div class='bottom'>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="large" data-count="none" data-via='dionyziz'>Tweet</a>
-        <a class="FlattrButton" style="display:none;float:right"
-            title="A Gentle Introdution to Algorithm Complexity Analysis"
-            data-flattr-uid="dionyziz"
-            data-flattr-tags="algorithms, complexity, computer science"
-            data-flattr-category="text"
-            data-flattr-button="compact"
-            href="http://discrete.gr/complexity">
-            A Gentle Introdution to Algorithm Complexity Analysis
-        </a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        <a class='license' href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons 3.0'><img src='http://i.creativecommons.org/l/by/3.0/80x15.png' alt='Creative Commons 3.0' /></a>
-        <div class='love'>Lovingly made in Athens city by <a href='http://twitter.com/dionyziz'>dionyziz</a>.</div>
-    </div>
-    </body>
-</html>
+<?php
+    return array(
+        'title' => 'A Gentle Introduction to Algorithm Complexity Analysis',
+        'content' => ob_get_clean()
+    );
+?>

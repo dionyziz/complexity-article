@@ -1,8 +1,18 @@
 <?php
-    if ( isset( $_GET[ 'el' ] ) ) {
-        readfile( 'index-el.html' );
+    $languages = array( 'el', 'en' );
+
+    foreach ( $languages as $lang ) {
+        if ( isset( $_GET[ $lang ] ) ) {
+            break;
+        }
     }
-    else {
-        readfile( 'index-en.html' );
+    if ( !isset( $_GET[ $lang ] ) ) {
+        $lang = 'en';
     }
+
+    $article = include 'index-' . $lang . '.php';
+
+    include 'header.php';
+    echo $article[ 'content' ];
+    include 'footer.php';
 ?>

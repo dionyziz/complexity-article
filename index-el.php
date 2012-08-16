@@ -1,45 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8' />
-        <title>
-            Μια Εύπεπτη Εισαγωγή στην Ανάλυση Πολυπλοκότητας Αλγορίθμων
-        </title>
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-        <link href='style.css' rel='stylesheet' />
-        <link rel='icon' type='image/png' href='images/smiley-cool.png' />
-        <link href='syntax/css/shCore.css' rel='stylesheet' />
-        <link href='syntax/css/shThemeDefault.css' rel='stylesheet' />
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-33157490-1']);
-            _gaq.push(['_trackPageview']);
-
-            ( function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            } )();
-        </script>
-        <script type="text/javascript">
-            ( function() {
-                var s = document.createElement( 'script' );
-                var t = document.getElementsByTagName( 'script' )[ 0 ];
-
-                s.type = 'text/javascript';
-                s.async = true;
-                s.src = '//api.flattr.com/js/0.6/load.js?mode=auto';
-
-                t.parentNode.insertBefore(s, t);
-             } )();
-        </script>
-    </head>
-    <body><div class='content'>
-        <!--
-        This article has been typeset in HTML/CSS by hand.
-
-        Interested in translating? E-mail me.
-        -->
+<?php
+    ob_start();
+?>
         <h1 id='gentle'>Μια Εύπεπτη Εισαγωγή στην Ανάλυση Πολυπλοκότητας Αλγορίθμων</h1>
         Διονύσης "dionyziz" Ζήνδρος &lt;<a href='mailto:dionyziz@gmail.com'>dionyziz@gmail.com</a>&gt;
 
@@ -424,7 +385,7 @@
             </ol>
         </div>
 
-        <p>Ο λόγος που χρησιμοποιούμε τα O και Ω αντί του Θ παρ᾽ όλο που τα O και Ω μπορούν να δώσουν κι αυτά ακριβή φράγματα είναι ότι μπορεί να μην μπορούμε να ξέρουμε αν ένα φράγμα που βρήκαμε είναι ακριβές, ή μπορεί απλώς να μη θέλουμε να μπούμε στη διαδικασία να το ψειρίσουμε τόσο πολύ.</li>
+        <p>Ο λόγος που χρησιμοποιούμε τα O και Ω αντί του Θ παρ᾽ όλο που τα O και Ω μπορούν να δώσουν κι αυτά ακριβή φράγματα είναι ότι μπορεί να μην μπορούμε να ξέρουμε αν ένα φράγμα που βρήκαμε είναι ακριβές, ή μπορεί απλώς να μη θέλουμε να μπούμε στη διαδικασία να το ψειρίσουμε τόσο πολύ.</p>
 
         <p>Αν δε θυμάστε όλα τα διαφορετικά σύμβολα και τις χρήσεις τους, μη σας νοιάζει και τόσο αυτή τη στιγμή. Μπορείτε πάντα να επιστρέψετε σε αυτή την ενότητα για να τα βρείτε. Τα σημαντικότερα σύμβολα είναι το O και το Θ.</p>
 
@@ -570,7 +531,7 @@
 
         <p>Δείτε την <strong>Εικόνα 6</strong> για να σας βοηθήσει να καταλάβετε τον τρόπο που λειτουργεί η δυαδική αναζήτηση.</p>
 
-        <p>Αν είστε αβέβαιος για το ότι αυτή η μέθοδος πραγματικά δουλεύει, αφιερώστε τώρα ένα λεπτό για να την τρέξετε "στο χέρι" σε κάποιο απλό παράδειγμα για να πεισθείτε ότι πραγματικά δουλεύει.</li>
+        <p>Αν είστε αβέβαιος για το ότι αυτή η μέθοδος πραγματικά δουλεύει, αφιερώστε τώρα ένα λεπτό για να την τρέξετε "στο χέρι" σε κάποιο απλό παράδειγμα για να πεισθείτε ότι πραγματικά δουλεύει.</p>
 
         <p>Ας προσπαθήσουμε τώρα να αναλύσουμε αυτόν τον αλγόριθμο. Και πάλι έχουμε έναν αναδρομικό αλγόριθμο σ᾽ αυτή την περίπτωση. Ας υποθέσουμε, για απλούστευση, ότι ο πίνακας κόβεται ακριβώς στη μέση πάντα, αγνοώντας για τώρα τα + 1 και - 1 στην αναδρομική κλήση. Θα πρέπει να έχετε πεισθεί μέχρι στιγμής ότι μία μικρή αλλαγή όπως το να αγνοήσουμε τα + 1 και - 1 δεν θα επηρεάσει τα αποτελέσματα της πολυπλοκότητάς μας. Αυτό είναι κάτι που θα έπρεπε κανονικά να αποδείξουμε αν θέλουμε να είμαστε μαθηματικά φρόνιμοι, αλλά πρακτικά είναι προφανές από τη διαίσθησή μας. Ας υποθέσουμε ότι ο πίνακάς μας έχει μέγεθος που είναι τέλεια δύναμη του 2, για απλότητα. Και πάλι αυτό είναι μία υπόθεση που δεν θα αλλάξει τα τελικά μας αποτελέσματα πολυπλοκότητας στα οποία θα καταλήξουμε. Η χειρότερη περίπτωση γι᾽ αυτό το πρόβλημα συμβαίνει όταν η τιμή που ψάχνουμε δεν εμφανίζεται καν μέσα στον πίνακά μας. Σ᾽ αυτή την περίπτωση, θα ξεκινήσουμε με ένα πίνακα μεγέθους n στην πρώτη κλήση της αναδρομής και στη συνέχεια θα έχουμε ένα πίνακα μεγέθους n / 2 στην επόμενη κλήση. Στη συνέχεια θα έχουμε ένα πίνακα μεγέθους n / 4 στην επόμενη αναδρομική κλήση, ακολουθούμενο από έναν πίνακα μεγέθους n / 8 και ούτω καθεξής. Γενικά, ο πίνακάς μας σπάει στη μέση σε κάθε κλήση, έως ότου φτάσουμε στο 1 στοιχείο. Οπότε ας γράψουμε τον αριθμό των στοιχείων του πίνακα για κάθε κλήση:</p>
         <ol class='hide-nums'>
@@ -694,51 +655,16 @@
 
         <h2 id='references'>Αναφορές</h2>
         <ol>
-            <li>Cormen, Leiserson, Rivest, Stein. <a href='http://www.amazon.co.uk/Introduction-Algorithms-T-Cormen/dp/0262533057/ref=sr_1_1?ie=UTF8&qid=1341414466&sr=8-1'>Εισαγωγή στους Αλγορίθμους</a>, MIT Press.</li>
-            <li>Dasgupta, Παπαδημητρίου, Vazirani. <a href='http://www.amazon.co.uk/Algorithms-Sanjoy-Dasgupta/dp/0073523402/ref=sr_1_1?s=books&ie=UTF8&qid=1341414505&sr=1-1'>Αλγόριθμοι</a>, McGraw-Hill Press.</li>
+            <li>Cormen, Leiserson, Rivest, Stein. <a href='http://www.amazon.co.uk/Introduction-Algorithms-T-Cormen/dp/0262533057/ref=sr_1_1?ie=UTF8&amp;qid=1341414466&amp;sr=8-1'>Εισαγωγή στους Αλγορίθμους</a>, MIT Press.</li>
+            <li>Dasgupta, Παπαδημητρίου, Vazirani. <a href='http://www.amazon.co.uk/Algorithms-Sanjoy-Dasgupta/dp/0073523402/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1341414505&amp;sr=1-1'>Αλγόριθμοι</a>, McGraw-Hill Press.</li>
             <li>Φωτάκης. Μάθημα <a href='http://discrete.gr/'>Διακριτών Μαθηματικών</a> στο Εθνικό Μετσόβιο Πολυτεχνείο.</li>
             <li>Φωτάκης. Μάθημα <a href='http://www.corelab.ece.ntua.gr/courses/algorithms/'>Αλγορίθμων και Πολυπλοκότητας</a> στο Εθνικό Μετσόβιο Πολυτεχνείο.</li>
         </ol>
 
        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'discretegr'; // required: replace example with your forum shortname
-            var disqus_identifier = '/complexity/';
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        
-        <script src="syntax/js/shCore.js"></script>
-        <script src="syntax/js/shBrushCpp.js"></script>
-        <script src="syntax/js/shBrushJScript.js"></script>
-        <script src="syntax/js/shBrushPython.js"></script>
-        <script src="syntax/js/shBrushRuby.js"></script>
-        <script src="syntax/js/shBrushDelphi.js"></script>
-        <script src="syntax/js/shBrushPhp.js"></script>
-        <script>
-            SyntaxHighlighter.all( 'code' );
-        </script>
-    </div>
-    <div class='bottom'>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="large" data-count="none" data-via='dionyziz'>Tweet</a>
-        <a class="FlattrButton" style="display:none;float:right"
-            title="Μια Εύπεπτη Εισαγωγή στην Ανάλυση Πολυπλοκότητας Αλγορίθμων"
-            data-flattr-uid="dionyziz"
-            data-flattr-tags="algorithms, complexity, computer science"
-            data-flattr-category="text"
-            data-flattr-button="compact"
-            href="http://discrete.gr/complexity">
-            Μια Εύπεπτη Εισαγωγή στην Ανάλυση Πολυπλοκότητας Αλγορίθμων
-        </a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        <a class='license' href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons 3.0'><img src='http://i.creativecommons.org/l/by/3.0/80x15.png' alt='Creative Commons 3.0' /></a>
-        <div class='love'>Φτιάχτηκε με αγάπη στην πόλη της Αθήνας από τον <a href='http://twitter.com/dionyziz'>dionyziz</a>.</div>
-    </div>
-    </body>
-</html>
+<?php
+    return array(
+        'title' => 'A Gentle Introduction to Algorithm Complexity Analysis',
+        'content' => ob_get_clean()
+    );
+?>
