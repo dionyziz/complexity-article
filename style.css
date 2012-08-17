@@ -111,7 +111,6 @@ div.highlight {
     padding-right: 13px;
     position: relative;
     top: -3px;
-    margin-left: -40px;
 }
 .bottom a:hover {
     color: white;
@@ -148,11 +147,30 @@ div.exercise {
 ol.hide-nums {
     list-style: none;
 }
-iframe.FlattrButton {
+#donate {
+    margin: 0 5px;
     float: right;
-    padding-right: 42px;
-    margin-top: 2px;
 }
-iframe.FlattrButton .content {
-    box-shadow: none;
+#donate-bubble {
+    display: none;
+    position: absolute;
+    font-size: 90%;
+    right: 10px;
+    bottom: 64px;
+    background-color: #111;
+    padding: 8px 6px;
+    border-radius: 5px;
+}
+#donate-bubble:before {
+    content: '▼';
+    position: absolute;
+    bottom: -17px;
+    right: 97px;
+    color: #111;
+    font-size: 150%;
+}
+#donate-bubble input {
+    display: block;
+    width: 300px;
+    margin: 5px 0 0 0;
 }

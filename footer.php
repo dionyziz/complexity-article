@@ -1,6 +1,11 @@
     </div>
     <div class='bottom'>
         <a href="https://twitter.com/share" class="twitter-share-button" data-related="jasoncosta" data-lang="en" data-size="large" data-count="none" data-via='dionyziz'>Tweet</a>
+        <a id='donate' href='' title='Donate via bitcoin'><img src='images/bitcoin.png' alt='A bitcoin' /></a>
+        <div id='donate-bubble'>
+            Donate via <a href='http://bitcoin.org/'>bitcoin</a>:
+            <input id='donate-input' type='text' value='1vXhpZpeDWLmp7vN7k52x3WwRSZK3DT6X' readonly='readonly' />
+        </div>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <a class='license' href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons 3.0'><img src='http://i.creativecommons.org/l/by/3.0/80x15.png' alt='Creative Commons 3.0' /></a>
         <div class='love'>Lovingly made in Athens city by <a href='http://twitter.com/dionyziz'>dionyziz</a>.</div>
@@ -28,5 +33,6 @@
     <script>
         SyntaxHighlighter.all( 'code' );
     </script>
+    <script src='ui.js'></script>
     </body>
 </html>
