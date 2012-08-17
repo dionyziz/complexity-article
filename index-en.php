@@ -4,6 +4,8 @@
         <h1 id='gentle'>A Gentle Introduction to Algorithm Complexity Analysis</h1>
         Dionysis "dionyziz" Zindros &lt;<a href='mailto:dionyziz@gmail.com'>dionyziz@gmail.com</a>&gt;
 
+        <?= $translations ?>
+
         <h2 id='intro'>Introduction</h2>
         <p>A lot of programmers that make some of the coolest and most useful software today, such as many of the stuff we see on the Internet or use daily, don't have a theoretical computer science background. They're still pretty awesome and creative programmers and we thank them for what they build.</p>
 

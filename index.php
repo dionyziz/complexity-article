@@ -1,14 +1,36 @@
 <?php
-    $languages = array( 'el', 'en' );
+    $languages = array(
+        'en' => 'English',
+        'el' => 'Ελληνικά'
+    );
 
-    foreach ( $languages as $lang ) {
-        if ( isset( $_GET[ $lang ] ) ) {
+    $lang = 'en';
+    foreach ( $languages as $code => $caption ) {
+        if ( isset( $_GET[ $code ] ) ) {
+            $lang = $code;
             break;
         }
     }
-    if ( !isset( $_GET[ $lang ] ) ) {
-        $lang = 'en';
-    }
+
+    ob_start();
+    ?>
+    <ul class='translations'>
+        <?php
+        foreach ( $languages as $code => $caption ) {
+            ?><li class='<?php
+            if ( $code == $lang ) {
+                ?>selected<?php
+            }
+            ?>'><a href='?<?php
+            echo $code;
+            ?>'><?php
+            echo $caption;
+            ?></a></li><?php
+        }
+        ?>
+    </ul>
+    <?php
+    $translations = ob_get_clean();
 
     $article = include 'index-' . $lang . '.php';
 

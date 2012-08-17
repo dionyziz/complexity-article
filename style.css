@@ -174,3 +174,25 @@ ol.hide-nums {
     width: 300px;
     margin: 5px 0 0 0;
 }
+.translations {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+.translations li {
+    display: inline;
+}
+.translations li:after {
+    content: '•';
+    padding: 0 5px;
+}
+.translations li:last-child:after {
+    content: '';
+}
+.translations li.selected a {
+    color: #111;
+    font-weight: bold;
+}
+.translations li.selected a:hover {
+    background-color: transparent;
+}
