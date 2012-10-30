@@ -27,7 +27,7 @@
             echo $caption;
             ?></a></li><?php
         }
-        ?>
+        ?><li><a href='mailto:dionyziz@gmail.com'>Help translate</a></li>
     </ul>
     <?php
     $translations = ob_get_clean();
