@@ -7,7 +7,7 @@
 		<br>
 		Преведено од Драган Димковиќ &lt;<a href='mailto:d.gago7@hotmail.com'>d.gago7@hotmail.com</a>&gt;
 		<br>
-		Преведено од Кристина Гогова
+		Преведено од Кристина Гогова &lt;<a href='mailto:kristina.gogova@yahoo.com'>kristina.gogova@yahoo.com</a>&gt;
         <?= $translations ?>
 
         <h2 id='intro'> Вовед</h2>
