@@ -6,7 +6,8 @@
         Dionysis "dionyziz" Zindros &lt;<a href='mailto:dionyziz@gmail.com'>dionyziz@gmail.com</a>&gt;
 		<br>
 		Преведено од Драган Димковиќ &lt;<a href='mailto:d.gago7@hotmail.com'>d.gago7@hotmail.com</a>&gt;
-
+		<br>
+		Преведено од Кристина Гогова
         <?= $translations ?>
 
         <h2 id='intro'> Вовед</h2>
