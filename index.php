@@ -1,7 +1,8 @@
 <?php
     $languages = array(
         'en' => 'English',
-        'el' => 'Ελληνικά'
+        'el' => 'Ελληνικά',
+        'mk' => 'македонски'
     );
 
     $lang = 'en';
