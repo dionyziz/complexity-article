@@ -523,7 +523,7 @@
                     if value &lt; A[ n / 2 ]:
                         return binarySearch( A[ 0...( n / 2 - 1 ) ], n / 2 - 1, value )
                     else if value &gt; A[ n / 2 ]:
-                        return binarySearch( ( A[ n / 2 + 1 )...n ], n / 2 - 1, value )
+                        return binarySearch( A[ ( n / 2 + 1 )...n ], n / 2 - 1, value )
                     else:
                         return true
             </pre>
