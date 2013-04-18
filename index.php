@@ -2,7 +2,8 @@
     $languages = array(
         'en' => 'English',
         'el' => 'Ελληνικά',
-        'mk' => 'македонски'
+        'mk' => 'македонски',
+        'es' => 'Español'
     );
 
     $lang = 'en';
