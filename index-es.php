@@ -3,7 +3,7 @@
 ?>
         <h1 id='gentle'>Una Amable Introducción al Análisis de Complejidad de Algoritmos</h1>
         Dionysis "dionyziz" Zindros &lt;<a href='mailto:dionyziz@gmail.com'>dionyziz@gmail.com</a>&gt;<br />
-        Maria Ramos &lt;<a href='mailto:mariar@webhostinghub.com'>mariar@webhostinghub.com</a>&gt;
+        Maria Ramos &lt;<a href='mailto:mariar@webhostinghub.com'>mariar@webhostinghub.com</a>&gt; — <a href='http://www.webhostinghub.com/support/edu'>webhostinghub.com</a>
 
         <?= $translations ?>
 
@@ -21,8 +21,8 @@
         <p>La notación "Big-O" y el análisis de complejidad de algoritmos es algo que muchos programadores industriales y estudiantes junior consideran complejo de entender, le temen, o lo evitan por verlo como algo inútil.  Sin embargo, no es algo tan difícil ni teórico como puede parecer en un comienzo.  La complejidad de algoritmo es simplemente una forma de evaluar qué tan rápido un programa o un algoritmo se ejecutan, así que, en realidad, es algo bastante pragmático. Partamos motivando el tema un poco.</p>
 
         <div class='sidefigure'>
-            <img src='images/halflife2.jpg' alt='A screenshot of an artificial intelligence character in Half-life 2' />
-            <label><strong>Figura 1</strong></label>
+            <img src='images/halflife2.jpg' alt='Una captura de pantalla de un personaje de inteligencia artificial en Half-Life 2' />
+            <label><strong>Figura 1</strong>: Los personajes de inteligencia artificial en los videojuegos utilizan algoritmos para evitar los obstáculos al navegar en el mundo virtual</label>
         </div>
 
         <h2 id='motivation'>Motivación</h2>
@@ -80,7 +80,7 @@
             i &lt; n;
         </pre>
 
-        <p>Entonces, si ignoramos el cuerpo del bucle, el número de instrucciones que necesita este algoritmo son 4 + 2n. Esto es, 4 instrucciones al comienzo del <code>for</code>loop y dos instrucciones al final de cada iteración de la que obtenemos <var>n</var>. Ahora, podemos definir una función f(n), la cual, dado un <var>n</var>,nos entrega el número de instrucciones que el algoritmo necesita. Para un cuerpo <code>for</code>  vacío tenemos f(n) = 4 + 2n.</p>
+        <p>Entonces, si ignoramos el cuerpo del bucle, el número de instrucciones que necesita este algoritmo son 4 + 2n. Esto es, 4 instrucciones al comienzo del <code>for</code>loop y dos instrucciones al final de cada iteración de la que obtenemos <var>n</var>. Ahora, podemos definir una función f( n ), la cual, dado un <var>n</var>,nos entrega el número de instrucciones que el algoritmo necesita. Para un cuerpo <code>for</code>  vacío tenemos f( n ) = 4 + 2n.</p>
 
         <h2 id='worst'>Análisis Worst-Case o del Peor Caso</h2>
 
@@ -102,11 +102,11 @@
 
         <p>Dada una función semejante, tenemos una idea bastante clara de qué tan rápido es un algoritmo. Sin embargo, como les prometí, no será necesario realizar la tediosa tarea de contar instrucciones en nuestro programa. Además, la cantidad real de instrucciones de la CPU requeridas para cada enunciado del lenguaje de programación depende del compilador y de nuestro lenguaje de programación, así como también del set de instrucciones disponibles de la CPU (i.e. ya se trate de un AMD o de un Intel Pentium, o de un procesador MIPS o de su Playstation 2), y dijimos que eso lo ignoraríamos. Ahora ejecutaremos nuestra función "f" a través de un "filtro" que nos ayudará a deshacernos de esos detalles menores que los científicos computacionales prefieren omitir.</p>
 
-        <p>En nuestra función, 6n + 4, tenemos dos términos: 6n y 4. En análisis de complejidad solamente nos preocupamos de lo que ocurre con la función contadora de instrucciones a medida que crece el input (<var>n</var>) del programa.  Esto en realidad va en paralelo con las ideas previas del comportamiento en el peor escenario: estamos interesados en cómo se comporta nuestro algoritmo cuando se le trata de forma ruda; cuando se le reta a hacer algo difícil.   Note que esto es bastante útil cuando estamos comparando algoritmos. Si un algoritmo derrota a otro algoritmo frente a un gran input, lo más cierto será que el algoritmo más rápido seguirá siéndolo cuando se le ingrese un input más simple y pequeño. <strong>De los términos que estamos considerando, haremos a un lado todos aquellos que crecen lentamente y sólo mantendremos los que crecen rápidamente, a medida que n se hace mayor.</strong> Claramente un 4 sigue como un 4 <var>n</var> crece, pero 6n aumenta y aumenta, por lo su influencia crecerá de igual forma en problemas de mayor tamaño. Por esto, lo primero que haremos será eliminar el 4 y dejaremos la función como f ( n ) = 6n.</p>
+        <p>En nuestra función, 6n + 4, tenemos dos términos: 6n y 4. En análisis de complejidad solamente nos preocupamos de lo que ocurre con la función contadora de instrucciones a medida que crece el input (<var>n</var>) del programa.  Esto en realidad va en paralelo con las ideas previas del comportamiento en el peor escenario: estamos interesados en cómo se comporta nuestro algoritmo cuando se le trata de forma ruda; cuando se le reta a hacer algo difícil.   Note que esto es bastante útil cuando estamos comparando algoritmos. Si un algoritmo derrota a otro algoritmo frente a un gran input, lo más cierto será que el algoritmo más rápido seguirá siéndolo cuando se le ingrese un input más simple y pequeño. <strong>De los términos que estamos considerando, haremos a un lado todos aquellos que crecen lentamente y sólo mantendremos los que crecen rápidamente, a medida que n se hace mayor.</strong> Claramente un 4 sigue como un 4 <var>n</var> crece, pero 6n aumenta y aumenta, por lo su influencia crecerá de igual forma en problemas de mayor tamaño. Por esto, lo primero que haremos será eliminar el 4 y dejaremos la función como f( n ) = 6n.</p>
 
-        <p>Si lo piensa, esto tiene sentido, ya que el 4 es simplemente una constante de iniciación. Diferentes lenguajes de programación requerirán distintos tiempos para ponerse en marcha. Por ejemplo, Java requiere inicializar su <a href="http://en.wikipedia.org/wiki/Java_virtual_machine">virtual machine</a>. Ya que estamos ignorando diferencias en el lenguaje de programación, será lógico ignorar este término.</p>
+        <p>Si lo piensa, esto tiene sentido, ya que el 4 es simplemente una constante de iniciación. Diferentes lenguajes de programación requerirán distintos tiempos para ponerse en marcha. Por ejemplo, Java requiere inicializar su <a href="http://en.wikipedia.org/wiki/Java_virtual_machine">máquina virtual</a>. Ya que estamos ignorando diferencias en el lenguaje de programación, será lógico ignorar este término.</p>
 
-        <p>El segundo aspecto que ignoraremos será la constante que multiplica a <var>n</var>, por lo que nuestra función quedará en f (n) = n. Como puede ver esto simplifica bastante las cosas. De nuevo, tiene sentido eliminar esta constante de multiplicación si tenemos en cuenta como compilan los diferentes lenguajes de programación. La sentencia "array lookup"  en un lenguaje puede compilar instrucciones distintas dependiendo del lenguaje. Por ejemplo, en C, hacer <code>A[ i ]</code>no contempla un chequeo de que <var>i</var> esté dentro del array declarado, mientras que <a href="http://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</a> sí lo hace. Es así como el siguiente código Pascal:</p>
+        <p>El segundo aspecto que ignoraremos será la constante que multiplica a <var>n</var>, por lo que nuestra función quedará en f( n ) = n. Como puede ver esto simplifica bastante las cosas. De nuevo, tiene sentido eliminar esta constante de multiplicación si tenemos en cuenta como compilan los diferentes lenguajes de programación. La sentencia "array lookup"  en un lenguaje puede compilar instrucciones distintas dependiendo del lenguaje. Por ejemplo, en C, hacer <code>A[ i ]</code>no contempla un chequeo de que <var>i</var> esté dentro del array declarado, mientras que <a href="http://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</a> sí lo hace. Es así como el siguiente código Pascal:</p>
 
         <pre class='brush: delphi; gutter: false; toolbar: false;'>
             M := A[ i ]
@@ -122,11 +122,11 @@
 
         <p>Por esto, es razonable esperar que distintos lenguajes de programación entreguen diferentes factores cuando contabilizamos sus instrucciones. En nuestro ejemplo, en el que estamos usando un compilador torpe para Pascal, el que además es inconsciente de posibles optimizaciones, Pascal requiere 3 instrucciones por cada acceso denegado a un array en vez de 1 instrucción, como C requiere. Dejar este factor de lado es coherente con ignorar las diferencias particulares entre uno y otro lenguaje de programación y compiladores, y enfocarse solamente en la idea del algoritmo mismo.</p>
 
-        <p>Este filtro de "eliminar todos los factores" y de "mantener el término de mayor crecimiento", como describimos anteriormente, es lo que denominamos <em>asymptotic behavior</em>. Entonces el comportamiento asintótico de f(n) = 2n + 8 es descrito por la función f(n)=n. Matemáticamente halando, lo que estamos diciendo es que lo que nos interesa es el límite de la función <var>n</var> a medida que tiende al infinito. Si no entiende que es lo que formalmente significa esa frase, no se preocupe, ya que esto es todo lo que necesita saber. (Como nota al margen, en un contexto estrictamente matemático, no podríamos eliminar las constantes en el límite, pero considerando los objetivos de las ciencias computacionales, sí lo querremos hacer, por las razones antes expuestas). Tomemos un par de ejemplos para familiarizarnos con el concepto.</p>
+        <p>Este filtro de "eliminar todos los factores" y de "mantener el término de mayor crecimiento", como describimos anteriormente, es lo que denominamos <em>asymptotic behavior</em>. Entonces el comportamiento asintótico de f( n ) = 2n + 8 es descrito por la función f( n ) = n. Matemáticamente halando, lo que estamos diciendo es que lo que nos interesa es el límite de la función <var>n</var> a medida que tiende al infinito. Si no entiende que es lo que formalmente significa esa frase, no se preocupe, ya que esto es todo lo que necesita saber. (Como nota al margen, en un contexto estrictamente matemático, no podríamos eliminar las constantes en el límite, pero considerando los objetivos de las ciencias computacionales, sí lo querremos hacer, por las razones antes expuestas). Tomemos un par de ejemplos para familiarizarnos con el concepto.</p>
 
         <div class='right sidefigure'>
-            <img src='images/cubic-vs-linear.png' alt='The cubic function, in blue, overcomes the linear function, in red, after n = 45' />
-            <label><strong>Figura 2</strong></label>
+            <img src='images/cubic-vs-linear.png' alt='La función cúbica, en azul, supera la función lineal, en rojo, después de n = 45' />
+            <label><strong>Figura 2</strong>: La función de n^3, dibujada en azul, se hace mayor que la función 1999n, dibujada en rojo, después de n = 45. Después de ese punto sigue siendo grande para siempre.</label>
         </div>
 
         <p>Encontremos el comportamiento asintótico de las siguientes funciones, mediante la eliminación de los factores constantes y manteniendo los términos que crecen más rápido.</p>
@@ -184,7 +184,7 @@
             ?&gt;
         </pre>
 
-        <p>Este método de búsqueda de un valor dentro de un array se denomina "linear search" o "búsqueda lineal". Este es un nombre razonable, ya que este programa tiene a f(n)=n (en la siguiente sección definiremos que significa exactamente "lineal"). Puede haberse percatado de que existe un enunciado de "quiebre" que puede ocasionar que el programa finalice prematuramente, incluso después de una única iteración. Pero recuerde que estamos interesados en el peor escenario, el cual, para este programa, será cuando el array <var>A</var> no contenga el valor. Así que aún tenemos f(n) = n.</p>
+        <p>Este método de búsqueda de un valor dentro de un array se denomina "linear search" o "búsqueda lineal". Este es un nombre razonable, ya que este programa tiene a f( n ) = n (en la siguiente sección definiremos que significa exactamente "lineal"). Puede haberse percatado de que existe un enunciado de "quiebre" que puede ocasionar que el programa finalice prematuramente, incluso después de una única iteración. Pero recuerde que estamos interesados en el peor escenario, el cual, para este programa, será cuando el array <var>A</var> no contenga el valor. Así que aún tenemos f( n ) = n.</p>
 
         <div class="exercise">
             <h3>Ejercicio 2</h3>
@@ -200,7 +200,7 @@
             v = a[ 0 ] + a[ 1 ]
         </pre>
 
-        <p>Aquí tenemos una cantidad constante de instrucciones, por lo que tenemos que f(n) = 1.</p>
+        <p>Aquí tenemos una cantidad constante de instrucciones, por lo que tenemos que f( n ) = 1.</p>
 
         <p>El siguiente programa en C++ chequea si es que un vector (un sofisticado tipo de array) denominado <var>A</var> y de tamaño <var>n</var>contiene los mismos dos valores en cualquier lugar dentro de él.</p>
 
@@ -247,7 +247,7 @@
             </p>
         </div>
 
-        <p>Ahora, enfoquémonos en la sofisticada notación que los científicos computacionales utilizan. Cuando hayamos encontrado la f asintótica exacta, diremos que nuestro programa es Θ( f( n ) ). Por ejemplo, los programas anteriores son Θ( 1 ), Θ( n<sup>2</sup> ) y Θ( n<sup>2</sup> ) respectivamente. Θ(n) se pronuncia "theta de n". A veces diremos que f(n), la función original que cuenta las instrucciones que incluyen las constantes es Θ( algo ). Por ejemplo, podremos decir que f(n) = 2n es una función que es Θ( n )  - nada nuevo en esto. También podremos escribir 2n ∈ Θ( n ), lo cual se pronuncia " dos n es theta de n". No se confunda con esta notación: Todo lo que está diciendo es que si hemos contados el número de instrucciones que un programa requiere y que si esa cantidad es 2n, entonces el comportamiento asintótico de nuestro algoritmo es descrito por n,  a lo cual llegamos al eliminar las constantes. Dada esta notación, los siguientes son algunos enunciados puramente matemáticos.</p>
+        <p>Ahora, enfoquémonos en la sofisticada notación que los científicos computacionales utilizan. Cuando hayamos encontrado la f asintótica exacta, diremos que nuestro programa es Θ( f( n ) ). Por ejemplo, los programas anteriores son Θ( 1 ), Θ( n<sup>2</sup> ) y Θ( n<sup>2</sup> ) respectivamente. Θ( n ) se pronuncia "theta de n". A veces diremos que f( n ), la función original que cuenta las instrucciones que incluyen las constantes es Θ( algo ). Por ejemplo, podremos decir que f( n ) = 2n es una función que es Θ( n )  - nada nuevo en esto. También podremos escribir 2n ∈ Θ( n ), lo cual se pronuncia " dos n es theta de n". No se confunda con esta notación: Todo lo que está diciendo es que si hemos contados el número de instrucciones que un programa requiere y que si esa cantidad es 2n, entonces el comportamiento asintótico de nuestro algoritmo es descrito por n,  a lo cual llegamos al eliminar las constantes. Dada esta notación, los siguientes son algunos enunciados puramente matemáticos.</p>
 
         <ol>
             <li>n<sup>6</sup> + 3n ∈ Θ( n<sup>6</sup> )</li>
@@ -266,8 +266,8 @@
         </div>
 
         <div class="right sidefigure">
-            <img src="http://discrete.gr/complexity/images/hidden-surface.jpg" alt="An example of surfaces hidden in a video game">
-            <label><strong>Figura 3</strong></label>
+            <img src="http://discrete.gr/complexity/images/hidden-surface.jpg" alt="Un ejemplo de superficies ocultas en un juego de video">
+            <label><strong>Figura 3</strong>: Un jugador que se encuentra en el punto amarillo no verá las zonas de sombras. Dividir el mundo en pequeños fragmentos y ordenarlos según su distancia al jugador es una manera de resolver el problema de la visibilidad.</label>
         </div>
 
         <h2 id="big-o">Notación Big-O u O-Grande</h2>
@@ -307,7 +307,7 @@
         veces y así sucesivamente, hasta que la última iteración del bucle externo, en la cual sólo corre una vez.
 .</p>
 
-        <p>Es algo más difícil evaluar la complejidad de este programa, ya que tenemos que resolver la suma  1 + 2 + … + (n-1) + n.
+        <p>Es algo más difícil evaluar la complejidad de este programa, ya que tenemos que resolver la suma  1 + 2 + … + (n - 1) + n.
         Pero lo que ciertamente si le podemos hallar es un "límite superior". Esto es, podemos modificar nuestro programa 
         (puede hacerlo mentalmente, no en el código mismo) para hacerlo peor de lo que es y luego encontrar la complejidad 
         de este nuevo programa que generamos. Si podemos encontrar la complejidad del programa peor, entonces sabremos que
@@ -327,8 +327,8 @@
         Θ( n<sup>2</sup> ) también será O( n<sup>2</sup> ).</p>
 
         <p>Pero, a la inversa, un programa que es O( n<sup>2</sup> ) podría no ser Θ( n<sup>2</sup> ).
-     Por ejemplo, cualquier programa que es Θ(n) también es O( n<sup>2</sup> ) 
-     además de ser O(n). Si nos imaginamos que un programa Θ(n) es un bucle sencillo <code>for</code> que se repite  <var>n</var> 
+     Por ejemplo, cualquier programa que es Θ( n ) también es O( n<sup>2</sup> ) 
+     además de ser O( n ). Si nos imaginamos que un programa Θ( n ) es un bucle sencillo <code>for</code> que se repite  <var>n</var> 
      veces, podremos empeorarlo al envolverlo en otro bucle <code>for</code> que también se repita <var>n</var> 
      veces, generando así un programa con f( n ) = n<sup>2</sup>. Si generalizamos esto, cualquier programa que sea Θ( <var>a</var> ) es
      O( <var>b</var> ) cuando  <var>b</var> es peor que <var>a</var>. 
@@ -358,7 +358,7 @@
             <h3>Solución</h3>
 
             <ol>
-                <li>Sabemos que esto es verdadero, ya que nuestro programa original era Θ (n). Podemos obtener O (n) sin alterar en absoluto nuestro programa.
+                <li>Sabemos que esto es verdadero, ya que nuestro programa original era Θ( n ). Podemos obtener O( n ) sin alterar en absoluto nuestro programa.
 </li>
                 <li>Como n<sup>2</sup> es peor que n, es verdadero.</li>
                 <li>Como n<sup>3</sup> es peor que n<sup>2</sup>, es verdadero.</li>
@@ -366,7 +366,7 @@
                 nstrucciones asintóticamente (una cantidad lineal de instrucciones), no puede empeorarse, por lo que tomará sólo 1 instrucción asintóticamente (una cantidad constante de instrucciones).
 </li>
                 <li>Verdadero, ya que ambas complejidades son iguales.</li>
-                <li>Podría ser o no ser verdadero, dependiendo del algoritmo. En un caso genérico, será falso. Si un algoritmo es Θ(1), entonces ciertamente es O(n). Pero si es O(n), podría no ser Θ(1). Por ejemplo, un algoritmo Θ(n) es O(n) pero no Θ(1).
+                <li>Podría ser o no ser verdadero, dependiendo del algoritmo. En un caso genérico, será falso. Si un algoritmo es Θ( 1 ), entonces ciertamente es O( n ). Pero si es O( n ), podría no ser Θ( 1 ). Por ejemplo, un algoritmo Θ( n ) es O( n ) pero no Θ( 1 ).
 </li>
             </ol>
         </div>
@@ -379,8 +379,8 @@
             <a href="http://en.wikipedia.org/wiki/1_%2B_2_%2B_3_%2B_4_%2B_%E2%80%A6">Wikipedia</a> – es algo sencillo.</p>
         </div>
 
-        <p>Debido a que la complejidad-O de un algoritmo entrega un límite superior para la complejidad real de un algoritmo, mientras que Θ entrega la complejidad real de un algoritmo, a veces decimos que  Θ entrega un límite ajustado. Si sabemos que hemos encontrado un límite de complejidad que no es ajustado, podemos denotarlo con minúsculas. Por ejemplo, si un algoritmo es Θ(n), entonces su complejidad ajustada es n. Por tanto, este algoritmo es tanto O(n) como
-        O( n<sup>2</sup> ).  Como el algoritmo es Θ(n), O(n) tiene un límite ajustado. Pero el límite de O( n<sup>2</sup> )
+        <p>Debido a que la complejidad-O de un algoritmo entrega un límite superior para la complejidad real de un algoritmo, mientras que Θ entrega la complejidad real de un algoritmo, a veces decimos que  Θ entrega un límite ajustado. Si sabemos que hemos encontrado un límite de complejidad que no es ajustado, podemos denotarlo con minúsculas. Por ejemplo, si un algoritmo es Θ( n ), entonces su complejidad ajustada es n. Por tanto, este algoritmo es tanto O( n ) como
+        O( n<sup>2</sup> ).  Como el algoritmo es Θ( n ), O( n ) tiene un límite ajustado. Pero el límite de O( n<sup>2</sup> )
         no es ajustado, por lo que podemos escribir el algoritmo como o( n<sup>2</sup> ), 
          lo cual se pronuncia "o pequeña de n cuadrada", para denotar que sabemos que nuestro límite no es ajustado. Aunque no siempre es algo fácil de hacer, es mejor encontrar los límites ajustados de nuestros algoritmos, ya que estos nos entregan mayor información acerca del comportamiento del algoritmo.
 </p>
@@ -388,16 +388,16 @@
         <div class="exercise">
             <h3>Ejercicio  5</h3>
 
-            <p>Determine cuál de los siguientes límites son límites ajustados y cuáles no lo son. Revise si hay límites erróneos. Use o(notación) para denotar los límites que no son ajustados.</p>
+            <p>Determine cuál de los siguientes límites son límites ajustados y cuáles no lo son. Revise si hay límites erróneos. Use o( notación ) para denotar los límites que no son ajustados.</p>
 
             <ol>
-                <li>Un algoritmo Θ( n ) para el cual encontramos un límite superior O(n).</li>
+                <li>Un algoritmo Θ( n ) para el cual encontramos un límite superior O( n ).</li>
                 <li>Un algoritmo Θ( n<sup>2</sup> ) para el cual encontramos un límite superior O( n<sup>3</sup> ).</li>
-                <li>  Un algoritmo Θ( 1 ) para el cual encontramos un límite superior O(n).
+                <li>  Un algoritmo Θ( 1 ) para el cual encontramos un límite superior O( n ).
 </li>
-                <li>Un algoritmo Θ( n ) para el cual encontramos un límite superior O(1).
+                <li>Un algoritmo Θ( n ) para el cual encontramos un límite superior O( 1 ).
 </li>
-                <li>Un algoritmo Θ( n ) para el cual encontramos un límite superior O(2n).
+                <li>Un algoritmo Θ( n ) para el cual encontramos un límite superior O( 2n ).
 </li>
             </ol>
         </div>
@@ -409,11 +409,11 @@
                 <li>En este caso las complejidades de Θ y de O, son iguales, por lo que el límite es ajustado.</li>
                 <li>Aquí vemos que la complejidad de O es de una mayor magnitud que la complejidad de Θ, por lo que este límite no es ajustado. De hecho, un límite de
                 O( n<sup>2</sup> ) sería de tipo ajustado. En consecuencia podemos escribir que el algoritmo es  o( n<sup>3</sup> ).</li>
-                <li>Nuevamente, vemos que la complejidad de O es mayor que la complejidad de Θ, por lo que tenemos un límite que no es ajustado. Un límite de O(1) sería de tipo ajustado. Por tanto, podemos indicar que el límite de O(n) no es ajustado, escribiéndolo como o(n).
+                <li>Nuevamente, vemos que la complejidad de O es mayor que la complejidad de Θ, por lo que tenemos un límite que no es ajustado. Un límite de O( 1 ) sería de tipo ajustado. Por tanto, podemos indicar que el límite de O( n ) no es ajustado, escribiéndolo como o( n ).
                 .</li>
-                <li>Ciertamente hemos cometido un error al calcular este límite, ya que está errado. Es imposible que un algoritmo Θ(n) tenga un límite superior de O(1), ya que n es una complejidad mayor que 1. Recuerde que O entrega un límite superior.
+                <li>Ciertamente hemos cometido un error al calcular este límite, ya que está errado. Es imposible que un algoritmo Θ( n ) tenga un límite superior de O( 1 ), ya que n es una complejidad mayor que 1. Recuerde que O entrega un límite superior.
                 </li>
-                <li>Este parece un límite no ajustado, pero en realidad no es así. De hecho se trata de un límite ajustado. Recuerde que el comportamiento asintótico es el mismo para 2n y n, y que O y Θ sólo están relacionados con el comportamiento asintótico. Entonces tenemos que O(2n)= O(n) y que por lo tanto este límite es ajustado, ya que la complejidad es la misma que Θ.
+                <li>Este parece un límite no ajustado, pero en realidad no es así. De hecho se trata de un límite ajustado. Recuerde que el comportamiento asintótico es el mismo para 2n y n, y que O y Θ sólo están relacionados con el comportamiento asintótico. Entonces tenemos que O( 2n )= O( n ) y que por lo tanto este límite es ajustado, ya que la complejidad es la misma que Θ.
 </li>
             </ol>
         </div>
@@ -426,7 +426,7 @@
         Ω( n<sup>3</sup> )indica que el algoritmo no es mejor que  n<sup>3</sup>. Podría ser que Θ( n<sup>3</sup> ),sea tan malo como
         Θ( n<sup>4</sup> ) o incluso peor, pero sabemos que es al menos algo así de malo. Entonces, Ω nos entregará un límite inferior para la complejidad de nuestro algoritmo. Como en el caso de o, podemos escribir ω si sabemos que el límite no es ajustado. Por ejemplo, un algoritmo
         Θ( n<sup>3</sup> ) es ο( n<sup>4</sup> ) y ω( n<sup>2</sup> ).
-        Ω(n) se pronuncia "omega grande de n", mientras que ω(n) se pronuncia "omega pequeña de n".</p>
+        Ω( n ) se pronuncia "omega grande de n", mientras que ω( n ) se pronuncia "omega pequeña de n".</p>
 
 
         <div class="exercise">
@@ -450,21 +450,21 @@
 </p>
 
             <ol>
-                <li> Los límites ajustados serán O(1) y Ω(1). Un límite O no ajustado sería O(n). Recuerde que O nos indica un límite superior. Como n es de una mayor magnitud que 1, este es un límite no ajustado y también podemos escribirlo como o(n). Pero para Ω no podemos encontrar un límite no ajustado, ya que no podemos descender bajo 1 para estas funciones. Así que tendremos que quedarnos con el límite ajustado.
+                <li> Los límites ajustados serán O( 1 ) y Ω( 1 ). Un límite O no ajustado sería O( n ). Recuerde que O nos indica un límite superior. Como n es de una mayor magnitud que 1, este es un límite no ajustado y también podemos escribirlo como o( n ). Pero para Ω no podemos encontrar un límite no ajustado, ya que no podemos descender bajo 1 para estas funciones. Así que tendremos que quedarnos con el límite ajustado.
 </li>
                 <li>Los límites ajustados tendrán que ser igual que la complejidad Θ, por lo que son
                 O( <img alt="sqrt( n )" src="http://discrete.gr/complexity/images/sqrtn.png"> ) y
                 Ω( <img alt="sqrt( n )" src="http://discrete.gr/complexity/images/sqrtn.png"> ) 
-                respectivamente. Para límites no ajustados podremos tener O(n), ya que n es mayor que
+                respectivamente. Para límites no ajustados podremos tener O( n ), ya que n es mayor que
                 <img alt="sqrt( n )" src="http://discrete.gr/complexity/images/sqrtn.png"> y por lo tanto es un límite superior para 
                 <img alt="sqrt( n )" src="http://discrete.gr/complexity/images/sqrtn.png">. 
-                Como sabemos que este es un límite superior no ajustado, también podemos escribirlo como o(n). Para un límite inferior no ajustado, simplemente podemos usar Ω(1). Como sabemos que este límite no es ajustado, también podemos escribirlo como ω(1).
+                Como sabemos que este es un límite superior no ajustado, también podemos escribirlo como o( n ). Para un límite inferior no ajustado, simplemente podemos usar Ω( 1 ). Como sabemos que este límite no es ajustado, también podemos escribirlo como ω( 1 ).
 </li>
-                <li>Los límites ajustados son O(n) y Ω(n). Dos límites no ajustados podrían ser ω(1) y o( n<sup>3</sup> ). 
+                <li>Los límites ajustados son O( n ) y Ω( n ). Dos límites no ajustados podrían ser ω( 1 ) y o( n<sup>3</sup> ). 
                  De hecho, estos son límites bastante pobres, ya que están lejos de las complejidades originales, pero al usar nuestras definiciones siguen siendo válidos.
 </li>
                 <li>Los límites ajustados son O( n<sup>2</sup> ) y Ω( n<sup>2</sup> ).
-                Para límites no ajustados, podríamos usar nuevamente ω(1) y o( n<sup>3</sup> ) como en nuestro ejemplo previo.</li>
+                Para límites no ajustados, podríamos usar nuevamente ω( 1 ) y o( n<sup>3</sup> ) como en nuestro ejemplo previo.</li>
                 <li> Los límites ajustados son  O( n<sup>3</sup> ) y Ω( n<sup>3</sup> ) respectivamente. Dos límites no ajustados podrían ser
                 ω( <img alt="sqrt( n )" src="http://discrete.gr/complexity/images/sqrtn.png"> n<sup>2</sup> ) y
                 o( <img alt="sqrt( n )" src="http://discrete.gr/complexity/images/sqrtn.png"> n<sup>3</sup> ). 
@@ -488,30 +488,30 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Asymptotic comparison operator</th>
-                        <th>Numeric comparison operator</th>
+                        <th>Operador de comparación asintótica</th>
+                        <th>Operador de comparación numérica</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Our algorithm is <strong>o</strong>( something )</td>
-                        <td>A number is <strong>&lt;</strong> something</td>
+                        <td>Nuestro algoritmo es <strong>o</strong>( algo )</td>
+                        <td>Un número es <strong>&lt;</strong> algo</td>
                     </tr>
                     <tr>
-                        <td>Our algorithm is <strong>O</strong>( something )</td>
-                        <td>A number is <strong>≤</strong> something</td>
+                        <td>Nuestro algoritmo es <strong>O</strong>( algo )</td>
+                        <td>Un número es <strong>≤</strong> algo</td>
                     </tr>
                     <tr>
-                        <td>Our algorithm is <strong>Θ</strong>( something )</td>
-                        <td>A number is <strong>=</strong> something</td>
+                        <td>Nuestro algoritmo es <strong>Θ</strong>( algo )</td>
+                        <td>Un número es <strong>=</strong> algo</td>
                     </tr>
                     <tr>
-                        <td>Our algorithm is <strong>Ω</strong>( something )</td>
-                        <td>A number is <strong>≥</strong> something</td>
+                        <td>Nuestro algoritmo es <strong>Ω</strong>( algo )</td>
+                        <td>Un número es <strong>≥</strong> algo</td>
                     </tr>
                     <tr>
-                        <td>Our algorithm is <strong>ω</strong>( something )</td>
-                        <td>A number is <strong>&gt;</strong> something</td>
+                        <td>Nuestro algoritmo es <strong>ω</strong>( algo )</td>
+                        <td>Un número es <strong>&gt;</strong> algo</td>
                     </tr>
                 </tbody>
             </table>
@@ -524,11 +524,11 @@
         </div>
 
         <div class="right sidefigure">
-            <img src="http://discrete.gr/complexity/images/log-vs-linear.png" alt="The log function is much lower than the square root function, which, in turn, is much lower than the linear function even for small n">
+            <img src="http://discrete.gr/complexity/images/log-vs-linear.png" alt="La función de registro es mucho menor que la función raíz cuadrada, la cual, a su vez, es mucho menor que la función lineal, incluso para los n pequeños">
             <label><strong>Figura 4</strong>:
             Una comparación de las funciones n, 
             <img alt="sqrt( n )" src="http://discrete.gr/complexity/images/sqrtn.png">, 
-            y log( n ). </label>
+            y log( n ). La función n, función lineal, dibujada en verde en la parte superior, crece mucho más rápido que la función de la raíz cuadrada, dibujada en rojo en el centro, la cual, a su vez, crece mucho más rápido que la función log( n ) dibujada en azul en la parte inferior de esta trama. Incluso para los pequeños n como n = 100, la diferencia es bastante pronunciada.</label>
         </div>
 
         <h2 id="logarithms">Logaritmos</h2>
@@ -542,7 +542,7 @@
         <p>Ahora querremos resolver esta ecuación para <var>x</var>. 
          por lo que nos preguntamos: ¿A qué número debemos elevar la base 2 para que obtengamos 1024? Ese número es 10. De hecho, tenemos que
          2<sup>10</sup> = 1024, 
-         lo cual es fácil de verificar. Los logaritmos nos ayudan a denotar este problema utilizando una notación nueva. En este caso, 10 es el logaritmo de 1024 y lo escribimos como log(1024) y lo leemos como "el logaritmo de 1024". Debido a que estamos usando 2 como base, estos logaritmos se denominan logaritmos de base 2. Existen logaritmos con otras bases pero en este artículo usaremos logaritmos de base 2 solamente. Si usted es un estudiante que compite en certámenes internacionales y no conoce los logaritmos,
+         lo cual es fácil de verificar. Los logaritmos nos ayudan a denotar este problema utilizando una notación nueva. En este caso, 10 es el logaritmo de 1024 y lo escribimos como log( 1024 ) y lo leemos como "el logaritmo de 1024". Debido a que estamos usando 2 como base, estos logaritmos se denominan logaritmos de base 2. Existen logaritmos con otras bases pero en este artículo usaremos logaritmos de base 2 solamente. Si usted es un estudiante que compite en certámenes internacionales y no conoce los logaritmos,
          <a href="http://tutorial.math.lamar.edu/Classes/Alg/LogFunctions.aspx">le sugiero enfáticamente que los ejercite </a>
         después de leer este artículo. En las ciencias computacionales, los logaritmos de base 2 son mucho más comunes que otro tipo de logaritmos. Esto se debe a que usualmente tenemos dos entidades distintas: 0 y 1. También tendemos a simplificar un gran problema en mitades, de las cuales siempre hay 2. En consecuencia, sólo necesita manejar los logaritmos de base 2 para continuar con este artículo.
 </p>
@@ -566,21 +566,21 @@
 
             <p>Aquí no hay que hacer nada más que aplicar las ideas que ya definimos.</p>
             <ol>
-                <li>Por prueba y error encontramos que x=6 y por lo tanto log(64)=6
+                <li>Por prueba y error encontramos que x=6 y por lo tanto log( 64 )=6
 </li>
                 <li>Aquí advertimos que (2<sup>2</sup>)<sup>x</sup>,por las propiedades de los exponentes, puede ser escrito como
-                2<sup>2x</sup>. Luego llegamos a que 2x=6 debido a que log(64)=6, obtenido anteriormente, y por tanto x=3.
+                2<sup>2x</sup>. Luego llegamos a que 2x=6 debido a que log( 64 )=6, obtenido anteriormente, y por tanto x = 3.
 </li>
                 <li>Usando los hallazgos de la ecuación anterior, podemos escribir 4 como 2^2  por lo que nuestra ecuación queda  (2<sup>2</sup>)<sup>x</sup> = 4 
                 lo cual es lo mismo que   2<sup>2x</sup> = 4
-                Luego notamos que log(4)=2, porque 2^2=4. En consecuencia tenemos que 2x=1, por lo que x=1. Esto puede observarse directamente de la ecuación original,  ya que el uso de 1 como exponente entrega la base como resultado.
+                Luego notamos que log( 4 )=2, porque 2^2=4. En consecuencia tenemos que 2x=1, por lo que x=1. Esto puede observarse directamente de la ecuación original,  ya que el uso de 1 como exponente entrega la base como resultado.
 </li>
-                <li>Recuerde que el 0 como exponente da como resultado 1. Entonces si tenemos log(1)=0 como 2^0=1, obtendremos que x=0.</li>
+                <li>Recuerde que el 0 como exponente da como resultado 1. Entonces si tenemos log( 1 )=0 como 2^0=1, obtendremos que x=0.</li>
                 <li> Aquí tenemos una suma, por lo que no podemos resolver el logaritmo directamente. Sin embargo podemos notar que
                 2<sup>x</sup> + 2<sup>x</sup> es igual que 2 * (2<sup>x</sup>).
                 Es decir, hemos puesto en la multiplicación otro 2, y por tanto esto es lo mismo que
                 2<sup>x + 1</sup>  Ahora nos queda resolver la ecuación  2<sup>x + 1</sup> = 32. 
-                Encontramos que log(32)=5 y que x+1=5 y en consecuencia x=4.
+                Encontramos que log( 32 )=5 y que x+1=5 y en consecuencia x=4.
 </li>
                 <li>stamos multiplicando dos potencias de 2, por lo que podemos juntarlas al advertir que
                 (2<sup>x</sup>) * (2<sup>x</sup>) es igual que 2<sup>2x</sup>. Luego, solamente tenemos que resolver la ecuación
@@ -590,13 +590,13 @@
 
         <div class="highlight">
             <p class="thumb"><strong>Regla General</strong>: 
-            Para comparar algoritmos implementados en C++, una vez que haya analizado la complejidad, podrá hacer un estimativo aproximado de qué tan rápido corre su programa al esperar que realice cerca de 1000000 operaciones por segundo, en donde las operaciones contadas son dadas por la función de comportamiento asintótico que describe su algoritmo. Por ejemplo, un algoritmo Θ(n) se tarda cerca de un segundo para procesar el input para n=1000000.
+            Para comparar algoritmos implementados en C++, una vez que haya analizado la complejidad, podrá hacer un estimativo aproximado de qué tan rápido corre su programa al esperar que realice cerca de 1000000 operaciones por segundo, en donde las operaciones contadas son dadas por la función de comportamiento asintótico que describe su algoritmo. Por ejemplo, un algoritmo Θ( n ) se tarda cerca de un segundo para procesar el input para n=1000000.
 </p>
         </div>
 
         <div class="right sidefigure">
             <img src="http://discrete.gr/complexity/images/factorial-recursion.png" alt="factorial( 5 ) -&gt; factorial( 4 ) -&gt; factorial( 3 ) -&gt; factorial( 2 ) -&gt; factorial( 1 )">
-            <label><strong>Figura 5</strong></label>
+            <label><strong>Figura 5</strong>: La recursividad realizada por la función factorial.</label>
         </div>
 
         <h2 id="recursion">Complejidad Recursiva</h2>
@@ -616,18 +616,18 @@
 
         <p>Ahora, analicemos la complejidad de esta función. Esta función no contiene bucles en su interior, pero su complejidad tampoco es constante. Para encontrar esta complejidad tenemos que recurrir a instrucciones de conteo.  Claramente, si ingresamos un
         <var>n</var> a esta función, se ejecutará <var>n</var> 
-        veces. Si no está seguro de eso, compruebe que realmente funciona ejecutándola "a mano" para un n=5. Por ejemplo, para n=5, se ejecutará 5 veces, a la vez que irá disminuyendo n en 1 con cada corrida. De esta forma, podemos notar que esta función es Θ(n).
+        veces. Si no está seguro de eso, compruebe que realmente funciona ejecutándola "a mano" para un n=5. Por ejemplo, para n=5, se ejecutará 5 veces, a la vez que irá disminuyendo n en 1 con cada corrida. De esta forma, podemos notar que esta función es Θ( n ).
 </p>
 
-        <p>Si tiene dudas en este punto, recuerde que siempre puede encontrar la complejidad exacta mediante instrucciones de conteo. Si lo desea, puede intentar el conteo de la cantidad efectiva de instrucciones realizadas por esta función para hallar una función f(n) y ver que de hecho es lineal (recuerde que lineal significa Θ(n)).</p>
+        <p>Si tiene dudas en este punto, recuerde que siempre puede encontrar la complejidad exacta mediante instrucciones de conteo. Si lo desea, puede intentar el conteo de la cantidad efectiva de instrucciones realizadas por esta función para hallar una función f( n ) y ver que de hecho es lineal (recuerde que lineal significa Θ(n)).</p>
 
-        <p>Revise el diagrama de la <strong>Figura 5</strong> para entender las recursiones realizadas cuando factorial(5) se ejecuta.</p>
+        <p>Revise el diagrama de la <strong>Figura 5</strong> para entender las recursiones realizadas cuando factorial( 5 ) se ejecuta.</p>
          
         <p>Esto debería aclarar el porqué esta función es de complejidad lineal.</p>
 
         <div class="right sidefigure">
-            <img src="http://discrete.gr/complexity/images/binary-search.png" alt="Binary searching in an array">
-            <label><strong>Figura 6</strong></label>
+            <img src="http://discrete.gr/complexity/images/binary-search.png" alt="Búsqueda binaria de una matriz">
+            <label><strong>Figura 6</strong>: La recursividad realiza búsqueda binaria. El argumento A de cada llamada se resalta en negro. La recursividad continúa hasta que la matriz examinada consta de un solo elemento. Cortesía de Lucas Francl.</label>
         </div>
 
         <h2 id="logcomplexity">Complejidad Logarítmica</h2>
@@ -680,7 +680,7 @@
 
         <p>1 = n / 2<sup>i</sup></p>
 
-        <p>Esto será verdad solamente cuando hayamos llegado a la última invocación de la función binary Search () o de búsqueda binaria,  y no en el caso general. Entonces, si despejamos para i, podremos saber en qué iteración la recursión finalizará. Multiplicando ambos lados por
+        <p>Esto será verdad solamente cuando hayamos llegado a la última invocación de la función binarySearch() o de búsqueda binaria,  y no en el caso general. Entonces, si despejamos para i, podremos saber en qué iteración la recursión finalizará. Multiplicando ambos lados por
         2<sup>i</sup> obtenemos:</p>
 
         <p>2<sup>i</sup> = n</p>
@@ -690,13 +690,13 @@
         <p>i = log( n )</p>
 
         <p> 
-Esto nos indica que el número requerido de iteraciones para realizar una búsqueda binaria es log(n), en donde n es el número de elementos de nuestro array original.
+Esto nos indica que el número requerido de iteraciones para realizar una búsqueda binaria es log( n ), en donde n es el número de elementos de nuestro array original.
 </p>
 
-        <p>Si lo piensa, esto tiene sentido. Por ejemplo, tome n=32, un array de 32 elementos. ¿Cuántas veces tenemos que dividir esto en mitades para llegar a sólo 1 elemento? Tenemos 32 → 16 → 8 → 4 → 2 → 1. Hicimos esto 5 veces, lo cual es el logaritmo de 32. Por lo tanto, la complejidad de la búsqueda binaria es Θ(log(n)).
+        <p>Si lo piensa, esto tiene sentido. Por ejemplo, tome n=32, un array de 32 elementos. ¿Cuántas veces tenemos que dividir esto en mitades para llegar a sólo 1 elemento? Tenemos 32 → 16 → 8 → 4 → 2 → 1. Hicimos esto 5 veces, lo cual es el logaritmo de 32. Por lo tanto, la complejidad de la búsqueda binaria es Θ( log( n ) ).
 .</p>
 
-        <p>Este último resultado nos permite comparar la búsqueda binaria con la búsqueda lineal, nuestro método anterior. Claramente, como log(n) es mucho menor que n, es razonable concluir que la búsqueda binaria es un método mucho más rápido que la búsqueda lineal para buscar dentro de un array. Por esto, es aconsejable que mantengamos nuestros arrays ordenados si queremos buscar muchas veces en ellos.
+        <p>Este último resultado nos permite comparar la búsqueda binaria con la búsqueda lineal, nuestro método anterior. Claramente, como log( n ) es mucho menor que n, es razonable concluir que la búsqueda binaria es un método mucho más rápido que la búsqueda lineal para buscar dentro de un array. Por esto, es aconsejable que mantengamos nuestros arrays ordenados si queremos buscar muchas veces en ellos.
 </p>
 
         <div class="highlight">
@@ -708,7 +708,7 @@ Esto nos indica que el número requerido de iteraciones para realizar una búsqu
         <h2 id="sort">Ordenamiento Óptimo</h2>
 
         <p><strong>Felicitaciones.</strong>
-        Ahora ya sabe cómo analizar la complejidad de los algoritmos, entender el comportamiento asintótico de las funciones y utilizar la notación Big-O.  También sabe como llegar intuitivamente  a que la complejidad de un algoritmo es O(1), O(log( n )), O(n), O(n2), y así sucesivamente. Conoce los símbolos o, O, ω, Ω y Θ  y qué significa el análisis de peor escenario. Si ha llegado hasta este punto, este tutorial ya ha cumplido con su objetivo.
+        Ahora ya sabe cómo analizar la complejidad de los algoritmos, entender el comportamiento asintótico de las funciones y utilizar la notación Big-O.  También sabe como llegar intuitivamente  a que la complejidad de un algoritmo es O( 1 ), O( log( n ) ), O( n ), O( n<sup>2</sup> ), y así sucesivamente. Conoce los símbolos o, O, ω, Ω y Θ  y qué significa el análisis de peor escenario. Si ha llegado hasta este punto, este tutorial ya ha cumplido con su objetivo.
 </p>
 
         <p>Esta sección final es opcional. Es un poco más complicada, por lo que si se siente abrumado,  tómese la libertad de omitirla. Requerirá que destine tiempo en trabajar con los ejercicios. Sin embargo, le entregará un método muy útil para el análisis de complejidad de algoritmos, el cual vale la pena comprender debido al gran potencial que tiene.
@@ -741,7 +741,7 @@ Esto nos indica que el número requerido de iteraciones para realizar una búsqu
             <p>Verifique que las funciones anteriores realmente ejecutan una mezcla. Reescríbalo en su lenguaje de programación favorito en una forma iterativa (utilizando <code>bucles</code> l) en lugar de usar recursión.</p>
         </div>
 
-        <p>El análisis de este algoritmo demuestra que tiene un tiempo de ejecución Θ(n), en donde n es la longitud del array resultante (n= A_n + B_n).
+        <p>El análisis de este algoritmo demuestra que tiene un tiempo de ejecución Θ( n ), en donde n es la longitud del array resultante (n= A_n + B_n).
  </p>
 
         <div class="exercise">
@@ -775,17 +775,17 @@ Esto nos indica que el número requerido de iteraciones para realizar una búsqu
         <p>Como ejemplo final, analicemos la complejidad de <code>mergeSort</code>. En cada paso de <code>mergeSort</code>, 
         estamos dividiendo el array en dos mitades de igual tamaño, de forma similar a <code>binarySearch</code>.
         Sin embargo, en este caso, mantenemos ambas mitades durante la ejecución.  Luego aplicamos recursivamente el algoritmo en cada una de las mitades. Luego de que la recursión vuelve, aplicamos la operación de
-        <code>mezcla </code> en el resultado, la cual se demora Θ(n).</p>
+        <code>mezcla </code> en el resultado, la cual se demora Θ( n ).</p>
 
-        <p>Entonces, dividimos el array original en dos arrays de tamaño n/2 cada uno. Luego mezclamos esos arrays, una operación que mezcla
-        <var>n</var> elementos, demorándose Θ(n) tiempo.
+        <p>Entonces, dividimos el array original en dos arrays de tamaño n / 2 cada uno. Luego mezclamos esos arrays, una operación que mezcla
+        <var>n</var> elementos, demorándose Θ( n ) tiempo.
 </p>
 
         <p>De una mirada a la <strong>Figura 7</strong> para entender esta recursión.</p>
 
         <div class="sidefigure">
-            <img src="http://discrete.gr/complexity/images/mergesort-recursion.png" alt="N splits into N / 2 and N / 2. Each of those splits into N / 4 and N / 4, and the process continues until we have calls of size 1.">
-            <label><strong>Figura 7</strong></label>
+            <img src="http://discrete.gr/complexity/images/mergesort-recursion.png" alt="N se divide en N / 2 y N / 2. Cada uno de ellos se divide en N / 4 y N / 4, y el proceso continúa hasta que tenemos llamados de tamaño 1.">
+            <label><strong>Figura 7</strong>: El árbol de recursividad de merge sort.</label>
         </div>
          
         <p>Veamos qué es lo que se nos muestra. Cada círculo representa un llamado a la función <code>mergeSort</code>
@@ -800,17 +800,17 @@ Esto nos indica que el número requerido de iteraciones para realizar una búsqu
         <p>En el diagrama anterior, note que en cada fila el número total de elementos es n. Para verificar esto, fíjese en cada fila individualmente. La primera fila contiene sólo un llamado a
         <code>mergeSort</code> entro del array de tamaño <var>n</var>, or lo que el número total de elementos es <var>n</var>. 
         La segunda fila tiene dos llamados a <code>mergeSort</code> 
-        cada uno de tamaño n/2. Pero n / 2 + n / 2 = n y, nuevamente, el número total de elementos en esta fila es 
-        <var>n</var>. En la tercera fila, tenemos 4 llamados, cada uno de los cuales es aplicado en un array de tamaño n/4, generando un número total de elementos igual a n / 4 + n / 4 + n / 4 + n / 4 = 4n / 4 = n. Por lo que nuevamente tenemos
+        cada uno de tamaño n / 2. Pero n / 2 + n / 2 = n y, nuevamente, el número total de elementos en esta fila es 
+        <var>n</var>. En la tercera fila, tenemos 4 llamados, cada uno de los cuales es aplicado en un array de tamaño n / 4, generando un número total de elementos igual a n / 4 + n / 4 + n / 4 + n / 4 = 4n / 4 = n. Por lo que nuevamente tenemos
         <var>n</var>elementos. Ahora, note que en cada fila de este diagrama el llamador tendrá que realizar una operación de
         <code>merge</code> en los elementos devueltos por los receptores de las llamadas. Por ejemplo, el círculo indicado con color rojo tiene que ordenar n/2 elementos. Para hacer esto, separa el array de tamaño n/2 en dos arrays de tamaño n/4, llama a
         <code>mergeSort</code> recursivamente para que los ordene (estas llamadas son los círculos indicados en color verde), y luego los mezcla. Esta operación implica la mezcla de n/2 elementos. En cada fila de nuestro árbol, el número total de elementos mezclados es n. En la fila que hemos estado explorando, nuestra función mezcla n/2 elementos y la función a su derecha (aquella de color azul) también tiene que mezclar n/2 elementos por sí misma. Eso genera n elementos en total, los cuales tienen que ser mezclados en la fila que estamos mirando.
 </p>
 
-        <p>Debido a lo anterior, la complejidad de cada fila es Θ(n). Sabemos que el número total de filas en este diagrama, también denominado la "profundidad del árbol de recursividad", será log( n ). El razonamiento detrás de esto es exactamente el mismo que utilizamos cuando hicimos el análisis de complejidad de una búsqueda binaria. Tenemos log( n ) filas y cada una de ellas es Θ( n ), por lo que la complejidad del ordenamiento por <code>mergeSort</code> es Θ( n * log( n ) ).Esto es mucho mejor que Θ( n<sup>2</sup> ) lo cual es lo que el ordenamiento por selección nos dio (recuerde  que log(n) es mucho menor que n, por lo que n*log( n ) es mucho menor que n * n = n<sup>2</sup>). Si esto le parece complicado, no se preocupe: no es algo sencillo la primera vez que se ve.  Vuelva a esta sección y relea las discusiones que hemos hecho, luego de haber implementado el ordenamiento por mezcla en su lenguaje de programación favorito y compruebe que funciona.</p>
+        <p>Debido a lo anterior, la complejidad de cada fila es Θ( n ). Sabemos que el número total de filas en este diagrama, también denominado la "profundidad del árbol de recursividad", será log( n ). El razonamiento detrás de esto es exactamente el mismo que utilizamos cuando hicimos el análisis de complejidad de una búsqueda binaria. Tenemos log( n ) filas y cada una de ellas es Θ( n ), por lo que la complejidad del ordenamiento por <code>mergeSort</code> es Θ( n * log( n ) ).Esto es mucho mejor que Θ( n<sup>2</sup> ) lo cual es lo que el ordenamiento por selección nos dio (recuerde  que log(n) es mucho menor que n, por lo que n * log( n ) es mucho menor que n * n = n<sup>2</sup>). Si esto le parece complicado, no se preocupe: no es algo sencillo la primera vez que se ve.  Vuelva a esta sección y relea las discusiones que hemos hecho, luego de haber implementado el ordenamiento por mezcla en su lenguaje de programación favorito y compruebe que funciona.</p>
 
-        <p>Como vio el último ejemplo, el análisis de complejidad nos permite comparar algoritmos para verificar cuál es mejor. Bajo estas circunstancias, podemos tener la certeza de que el ordenamiento por mezcla superará la ordenamiento por selección en arrays grandes. Esta conclusión podría ser difícil de visualizar si es que no tuviésemos la base teórica de análisis de algoritmos que hemos desarrollado. En la práctica, se usan algoritmos de ordenamiento con tiempo de ejecución del tipo Θ(n*log(n)). Por ejemplo, el
-        <a href="http://lxr.free-electrons.com/source/lib/sort.c">kernel de Linux utiliza un algoritmo de ordenamiento llamado "heapsort"</a>, el cual tiene el mismo tiempo de ejecución que el ordenamiento por mezcla, a saber Θ(n log(n)), y por tanto es óptimo. Note que no hemos probado que estos algoritmos de ordenamiento son óptimos. Hacer esto requiere un desarrollo matemático más avanzado, pero tenga la certeza de que no es posible mejorar aún más desde un punto de vista de complejidad.</p>
+        <p>Como vio el último ejemplo, el análisis de complejidad nos permite comparar algoritmos para verificar cuál es mejor. Bajo estas circunstancias, podemos tener la certeza de que el ordenamiento por mezcla superará la ordenamiento por selección en arrays grandes. Esta conclusión podría ser difícil de visualizar si es que no tuviésemos la base teórica de análisis de algoritmos que hemos desarrollado. En la práctica, se usan algoritmos de ordenamiento con tiempo de ejecución del tipo Θ( n * log( n ) ). Por ejemplo, el
+        <a href="http://lxr.free-electrons.com/source/lib/sort.c">kernel de Linux utiliza un algoritmo de ordenamiento llamado "heapsort"</a>, el cual tiene el mismo tiempo de ejecución que el ordenamiento por mezcla, a saber Θ( n * log( n ) ), y por tanto es óptimo. Note que no hemos probado que estos algoritmos de ordenamiento son óptimos. Hacer esto requiere un desarrollo matemático más avanzado, pero tenga la certeza de que no es posible mejorar aún más desde un punto de vista de complejidad.</p>
 
         <p>Ahora que ha terminado con la lectura de este tutorial, la intuición que ha desarrollado para el análisis de complejidad de algoritmos le permitirá diseñar programas más rápidos y también lo ayudará a trabajar de forma más productiva,  orientando sus esfuerzos de optimización hacia aquello que realmente es importante,  dejando de lado detalles superficiales. Adicionalmente, el lenguaje matemático y la notación que hemos desenvuelto, tal como la notación Big-O,  es de gran utilidad para comunicarse con otros ingenieros de software a la hora de discutir acerca de tiempos de ejecución de algoritmos, lo cual, espero que pueda ponerlo en práctica con los nuevos conocimientos que ha adquirido.</p>
 
@@ -822,7 +822,7 @@ Esto nos indica que el número requerido de iteraciones para realizar una búsqu
 
         <p><strong>Gracias por leer</strong> No recibí dinero por escribir este artículo, por lo que si le gustó, envíeme un <a href="mailto:dionyziz@gmail.com"> e-mail</a> con saludos. Me agrada mucho recibir fotos de distintos lugares del mundo, por lo que no dude en adjuntar una foto suya en su ciudad!</p>
 
-        <h2 id='references'>References</h2>
+        <h2 id='references'>Referencias</h2>
         <ol>
             <li>Cormen, Leiserson, Rivest, Stein. <a href='http://www.amazon.co.uk/Introduction-Algorithms-T-Cormen/dp/0262533057/ref=sr_1_1?ie=UTF8&amp;qid=1341414466&amp;sr=8-1'>Introduction to Algorithms</a>, MIT Press.</li>
             <li>Dasgupta, Papadimitriou, Vazirani. <a href='http://www.amazon.co.uk/Algorithms-Sanjoy-Dasgupta/dp/0073523402/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1341414505&amp;sr=1-1'>Algorithms</a>, McGraw-Hill Press.</li>
