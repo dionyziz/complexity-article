@@ -42,7 +42,7 @@
             var M = A[ 0 ];
 
             for ( var i = 0; i &lt; n; ++i ) {
-                if ( A[ i ] &gt; M ) {
+                if ( A[ i ] &gt;= M ) {
                     M = A[ i ];
                 }
             }
@@ -85,10 +85,10 @@
         <p>Now, looking at the <code>for</code> body, we have an array lookup operation and a comparison that happen always:</p>
 
         <pre class='brush: jscript; gutter: false; toolbar: false;'>
-            if ( A[ i ] &gt; M ) { ...
+            if ( A[ i ] &gt;= M ) { ...
         </pre>
 
-        <p>That's two instructions right there. But the <code>if</code> body may run or may not run, depending on what the array values actually are. If it happens to be so that <code>A[ i ] &gt; M</code>, then we'll run these two additional instructions — an array lookup and an assignment:</p>
+        <p>That's two instructions right there. But the <code>if</code> body may run or may not run, depending on what the array values actually are. If it happens to be so that <code>A[ i ] &gt;= M</code>, then we'll run these two additional instructions — an array lookup and an assignment:</p>
 
         <pre class='brush: jscript; gutter: false; toolbar: false;'>
             M = A[ i ]

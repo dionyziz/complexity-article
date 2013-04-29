@@ -44,7 +44,7 @@
             var M = A[ 0 ];
 
             for ( var i = 0; i &lt; n; ++i ) {
-                if ( A[ i ] &gt; M ) {
+                if ( A[ i ] &gt;= M ) {
                     M = A[ i ];
                 }
             }
@@ -87,10 +87,10 @@
         <p>Ahora, si nos fijamos en el cuerpo del  <code>for</code> tenemos una operación de búsqueda en array y una comparación que ocurre siempre:</p>
 
         <pre class='brush: jscript; gutter: false; toolbar: false;'>
-            if ( A[ i ] &gt; M ) { ...
+            if ( A[ i ] &gt;= M ) { ...
         </pre>
 
-        <p>Eso serían dos instrucciones. Pero el cuerpo del <code>if</code> podría correr o no correr, dependiendo de cuáles son los valores del array. Si ocurriese que <code>A[ i ] &gt; M</code>, ntonces ejecutaremos dos instrucciones adicionales – una búsqueda en array y una asignación:</p>
+        <p>Eso serían dos instrucciones. Pero el cuerpo del <code>if</code> podría correr o no correr, dependiendo de cuáles son los valores del array. Si ocurriese que <code>A[ i ] &gt;= M</code>, ntonces ejecutaremos dos instrucciones adicionales – una búsqueda en array y una asignación:</p>
 
         <pre class='brush: jscript; gutter: false; toolbar: false;'>
             M = A[ i ]
