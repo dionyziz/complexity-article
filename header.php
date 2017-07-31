@@ -7,7 +7,7 @@
                 echo $article[ 'title' ];
             ?>
         </title>
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
+        <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
         <link href='style.css' rel='stylesheet' />
         <link rel='icon' type='image/png' href='images/smiley-cool.png' />
         <link href='syntax/css/shCore.css' rel='stylesheet' />
