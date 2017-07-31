@@ -87,7 +87,7 @@
 
 .syntaxhighlighter .line .content .block
 {
-	background: url(wrapping.png) 0 1.1em no-repeat;
+	/* background: url(wrapping.png) 0 1.1em no-repeat;*/
 }
 
 .syntaxhighlighter .ruler
