@@ -7,21 +7,21 @@
  *
  * @author
  * Alex Gorbatchev
- * 
+ *
  * @copyright
  * Copyright (C) 2004-2009 Alex Gorbatchev.
  *
  * Licensed under a GNU Lesser General Public License.
  * http://creativecommons.org/licenses/LGPL/2.1/
  *
- * SyntaxHighlighter is donationware. You are allowed to download, modify and distribute 
- * the source code in accordance with LGPL 2.1 license, however if you want to use 
+ * SyntaxHighlighter is donationware. You are allowed to download, modify and distribute
+ * the source code in accordance with LGPL 2.1 license, however if you want to use
  * SyntaxHighlighter on your site or include it in your product, you must donate.
  * http://alexgorbatchev.com/wiki/SyntaxHighlighter:Donate
  */
 /************************************
  * Default Syntax Highlighter theme.
- * 
+ *
  * Interface elements.
  ************************************/
 
@@ -68,7 +68,7 @@
 	color: #000;
 }
 
-.syntaxhighlighter.printing .line .content 
+.syntaxhighlighter.printing .line .content
 {
 	border: 0;
 }
@@ -123,72 +123,72 @@
  ************************************/
 .syntaxhighlighter .plain,
 .syntaxhighlighter .plain a
-{ 
+{
 	color: #000;
 }
 
 .syntaxhighlighter .comments,
 .syntaxhighlighter .comments a
-{ 
+{
 	color: #008200;
 }
 
 .syntaxhighlighter .string,
 .syntaxhighlighter .string a
 {
-	color: blue; 
+	color: blue;
 }
 
 .syntaxhighlighter .keyword
-{ 
-	color: #069; 
-	font-weight: bold; 
+{
+	color: #069;
+	font-weight: bold;
 }
 
-.syntaxhighlighter .preprocessor 
-{ 
-	color: gray; 
+.syntaxhighlighter .preprocessor
+{
+	color: gray;
 }
 
-.syntaxhighlighter .variable 
-{ 
-	color: #a70; 
+.syntaxhighlighter .variable
+{
+	color: #a70;
 }
 
 .syntaxhighlighter .value
-{ 
-	color: #090; 
+{
+	color: #090;
 }
 
 .syntaxhighlighter .functions
-{ 
-	color: #ff1493; 
+{
+	color: #ff1493;
 }
 
 .syntaxhighlighter .constants
-{ 
-	color: #0066CC; 
+{
+	color: #0066CC;
 }
 
 .syntaxhighlighter .script
-{ 
+{
 	background-color: yellow !important;
 }
 
 .syntaxhighlighter .color1,
 .syntaxhighlighter .color1 a
-{ 
-	color: #808080; 
+{
+	color: #808080;
 }
 
 .syntaxhighlighter .color2,
 .syntaxhighlighter .color2 a
-{ 
-	color: #ff1493; 
+{
+	color: #ff1493;
 }
 
 .syntaxhighlighter .color3,
 .syntaxhighlighter .color3 a
-{ 
-	color: red; 
+{
+	color: red;
 }
