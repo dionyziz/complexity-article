@@ -198,3 +198,72 @@ ol.hide-nums {
 .translations li.selected a:hover {
     background-color: transparent;
 }
+#rtl-wrapper {
+    direction: rtl;   
+}
+#rtl-wrapper h1,
+#rtl-wrapper h2,
+#rtl-wrapper h3 {
+    text-shadow: -1px 1px 0px white;
+}
+#rtl-wrapper .sidefigure {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+#rtl-wrapper .sidefigure.right {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+#rtl-wrapper .leftofimage {
+    margin-left: 520px;
+    clear: right;
+    margin-right: initial;
+}
+#rtl-wrapper div.highlight {
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -moz-repeating-linear-gradient(45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -o-repeating-linear-gradient(45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+    background-image: -ms-repeating-linear-gradient(45deg, transparent, transparent 20px, #c1ddff 20px, #c1ddff 40px);
+}
+#rtl-wrapper .bottom .license {
+    right: 50%;
+}
+#rtl-wrapper .bottom .twitter-share-button {
+    float: left;
+    right: 3px;
+    padding-left: 13px;
+}
+#rtl-wrapper div.love {
+    padding-right: 9px;
+}
+#rtl-wrapper div.love::before {
+    padding-left: 9px;
+}
+#rtl-wrapper #donate {
+    float: left;
+}
+#rtl-wrapper #donate-bubble {
+    left: 10px;
+}
+#rtl-wrapper #donate-bubble:before {
+    left: 97px;
+}
+#rtl-wrapper .thumb {
+    background-position: right 10px top 6px;
+}
+#rtl-wrapper .ltr,
+#rtl-wrapper .func,
+#rtl-wrapper p > code,
+#rtl-wrapper var {
+    direction: ltr;
+    display: inline-block;
+}
+#rtl-wrapper .syntaxhighlighter {
+  direction: ltr;
+  clear: right;
+}
+#rtl-wrapper .left {
+    float: left;
+    direction: ltr;
+}
