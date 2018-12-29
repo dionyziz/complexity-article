@@ -12,7 +12,7 @@
         <p>However, theoretical computer science has its uses and applications and can turn out to be quite practical. In this article, targeted at programmers who know their art but who don't have any theoretical computer science background, I will present one of the most pragmatic tools of computer science: Big O notation and algorithm complexity analysis. As someone who has worked both in a computer science academic setting and in building production-level software in the industry, this is the tool I have found to be one of the truly useful ones in practice, so I hope after reading this article you can apply it in your own code to make it better. After reading this post, you should be able to understand all the common terms computer scientists use such as "big O", "asymptotic behavior" and "worst-case analysis".</p>
 
         <p>This text is also targeted at the junior high school and high school students from Greece or anywhere else internationally competing in the <a href='http://en.wikipedia.org/wiki/International_Olympiad_in_Informatics'>International Olympiad in Informatics</a>, an algorithms competition for students, or other similar competitions. As such, it does not have any mathematical prerequisites and will give you the background you need in order to continue studying algorithms with a firmer understanding of the theory behind them. As someone who used to compete in these student competitions, I highly advise you to read through this whole introductory material and try to fully understand it, because it will be necessary as you study algorithms and learn more advanced techniques.</p>
-        
+
         <p>I believe this text will be helpful for industry programmers who don't have too much experience with theoretical computer science (it is a fact that some of the most inspiring software engineers never went to college). But because it's also for students, it may at times sound a little bit like a textbook. In addition, some of the topics in this text may seem too obvious to you; for example, you may have seen them during your high school years. If you feel you understand them, you can skip them. Other sections go into a bit more depth and become slightly theoretical, as the students competing in this competition need to know more about theoretical algorithms than the average practitioner. But these things are still good to know and not tremendously hard to follow, so it's likely well worth your time. As the original text was targeted at high school students, no mathematical background is required, so anyone with some programming experience (i.e. if you know what recursion is) will be able to follow through without any problem.</p>
 
         <p>Throughout this article, you will find various pointers that link you to interesting material often outside the scope of the topic under discussion. If you're an industry programmer, it's likely that you're familiar with most of these concepts. If you're a junior student participating in competitions, following those links will give you clues about other areas of computer science or software engineering that you may not have yet explored which you can look at to broaden your interests.</p>
@@ -35,7 +35,7 @@
         <h2>Counting instructions</h2>
 
         <p>In this article, I'll use various programming languages for the examples. However, don't despair if you don't know a particular programming language. Since you know programming, you should be able to read the examples without any problem even if you aren't familiar with the programming language of choice, as they will be simple and I won't use any esoteric language features. If you're a student competing in algorithms competitions, you most likely work with <a href='http://www.cplusplus.com/doc/tutorial/'>C++</a>, so you should have no problem following through. In that case I recommend working on the exercises using C++ for practice.</p>
-        
+
         <p>The maximum element in an array can be looked up using a simple piece of code such as this piece of <a href='http://www.quirksmode.org/js/intro.html'>Javascript</a> code. Given an input array <var>A</var> of size <var>n</var>:</p>
 
         <pre name='code' class='brush: js; gutter: false; toolbar: false'>
@@ -161,7 +161,7 @@
         </div>
 
         <h2 id='complexity'>Complexity</h2>
-        
+
         <p>So what this is telling us is that since we can drop all these decorative constants, it's pretty easy to tell the asymptotic behavior of the instruction-counting function of a program. In fact, any program that doesn't have any loops will have f( n ) = 1, since the number of instructions it needs is just a constant (unless it uses recursion; see below). Any program with a single loop which goes from 1 to <var>n</var> will have f( n ) = n, since it will do a constant number of instructions before the loop, a constant number of instructions after the loop, and a constant number of instructions within the loop which all run <var>n</var> times.</p>
 
         <p>This should now be much easier and less tedious than counting individual instructions, so let's take a look at a couple of examples to get familiar with this. The following <a href='http://php.net/'>PHP</a> program checks to see if a particular value exists within an array <var>A</var> of size <var>n</var>:</p>
@@ -391,7 +391,7 @@
         <p>Also note that although Ω gives us a lower-bound behavior for our function (i.e. we've improved our program and made it perform less instructions) we're still referring to a "worst-case" analysis. This is because we're feeding our program the worst possible input for a given n and analyzing its behavior under this assumption.</p>
 
         <p>The following table indicates the symbols we just introduced and their correspondence with the usual mathematical symbols of comparisons that we use for numbers. The reason we don't use the usual symbols here and use Greek letters instead is to point out that we're doing an asymptotic behavior comparison, not just a simple comparison.</p>
-        
+
         <div class='figure'>
             <table>
                 <thead>
@@ -497,7 +497,7 @@
         <p>If you're unsure about this fact, remember that you can always find the exact complexity by counting instructions. If you wish, you can now try to count the actual instructions performed by this function to find a function f( n ) and see that it's indeed linear (recall that linear means Θ( n )).</p>
 
         <p>See <strong>Figure 5</strong> for a diagram to help you understand the recursions performed when factorial( 5 ) is called.</p>
-         
+
         <p>This should clear up why this function is of linear complexity.</p>
 
         <div class='right sidefigure'>
@@ -560,7 +560,7 @@
 
         <p>If you think about it, this makes some sense. For example, take n = 32, an array of 32 elements. How many times do we have to cut this in half to get only 1 element? We get: 32 → 16 → 8 → 4 → 2 → 1. We did this 5 times, which is the logarithm of 32. Therefore, the complexity of binary search is Θ( log( n ) ).</p>
 
-        <p>This last result allows us to compare binary search with linear search, our previous method. Clearly, as log( n ) is much smaller than n, it is reasonable to conclude that binary search is a much faster method to search within an array then linear search, so it may be advisable to keep our arrays sorted if we want to do many searches within them.</p>
+        <p>This last result allows us to compare binary search with linear search, our previous method. Clearly, as log( n ) is much smaller than n, it is reasonable to conclude that binary search is a much faster method to search within an array than linear search, so it may be advisable to keep our arrays sorted if we want to do many searches within them.</p>
 
         <div class='highlight'>
             <p class='thumb'><strong>Rule of thumb</strong>: Improving the asymptotic running time of a program often tremendously increases its performance, much more than any smaller "technical" optimizations such as using a faster programming language.</p>
