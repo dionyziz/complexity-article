@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@media print{
+  body{ background-color:#FFFFFF; background-image:none; color:#000000 }
+  #ad{ display:none;}
+  #leftbar{ display:none;}
+  #contentarea{ width:100%;}
+}
+
 body {
     font-family: 'Droid Sans', 'Trebuchet MS', Verdana, Helvetica, sans-serif;
     background-color: #eee;
