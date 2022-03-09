@@ -4,8 +4,10 @@
         'el' => 'Ελληνικά',
         'mk' => 'македонски',
         'es' => 'Español',
+        'nl' => 'Nederlands',
         'he' => 'עברית',
         'pt' => 'Português',
+        'sh' => 'srpskohrvatski',
         'uk' => 'Українська',
         'ru' => 'Русский'
     );
