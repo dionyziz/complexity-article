@@ -7,7 +7,9 @@
         'nl' => 'Nederlands',
         'he' => 'עברית',
         'pt' => 'Português',
-        'sh' => 'srpskohrvatski'
+        'sh' => 'srpskohrvatski',
+        'uk' => 'Українська',
+        'ru' => 'Русский'
     );
 
     $lang = 'en';
