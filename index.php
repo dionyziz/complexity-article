@@ -5,7 +5,8 @@
         'mk' => 'македонски',
         'es' => 'Español',
         'he' => 'עברית',
-        'pt' => 'Português'
+        'pt' => 'Português',
+        'ru' => 'Русский'
     );
 
     $lang = 'en';
