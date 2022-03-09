@@ -4,8 +4,10 @@
         'el' => 'Ελληνικά',
         'mk' => 'македонски',
         'es' => 'Español',
+        'nl' => 'Nederlands',
         'he' => 'עברית',
-        'pt' => 'Português'
+        'pt' => 'Português',
+        'sh' => 'srpskohrvatski'
     );
 
     $lang = 'en';
